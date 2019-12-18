@@ -1,0 +1,205 @@
+/*=========================================================================================
+	File Name: horizontal-menu.scss
+	Description: A classic horizontal menu for easy navingation & support all devices.
+	It support light & dark version, filpped layout, right side icons, borders menu for
+	item seperation.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	 Version: 3.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+// Core variables and mixins
+@import "../../../bootstrap/functions";
+@import "../../../bootstrap/mixins";
+@import "../../../bootstrap-extended/mixins";
+
+// Core variables and mixins overrides
+@import "../../variables/material-variables";
+@import "../../../bootstrap/variables";
+
+@import "../../variables/components-variables";
+
+// Import first main menu mixin
+@import "../../mixins/main-menu-mixin";
+
+
+// Horizontal Menu
+//=========================
+.horizontal-menu {
+  .navbar-horizontal .nav-item {
+    i {
+      font-size: 1.6rem;
+      margin-right: 0.5rem;
+      position: relative;
+      top: -2px;
+    }
+
+    a span {
+      font-size: 1.1rem;
+    }
+  }
+
+  //navbar-icon-right
+  .navbar-horizontal{
+    &.navbar-icon-right{
+      .nav-item {
+        i {
+          
+          top: 4px;
+        }
+      }
+    }
+  }
+
+  // header-navbar height
+  .header-navbar {
+    .navbar-container{
+      height: auto;
+    }
+  }
+
+  .navbar-horizontal ul#main-menu-navigation>li>a {
+    padding: 1.8rem 1rem;
+  }
+
+  #main-menu-navigation {
+    ul {
+      li {
+        a {
+          span {
+            transition: all 0.2s ease;
+            display: inline-block;
+
+            &:hover,
+            .hover {
+              transform: translateX(4px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.menu-collapsed {
+
+    // material-icon of navbar
+    .navbar-horizontal .nav-item {
+      i {
+        margin-right: 0;
+      }
+    }
+    
+    #main-menu-navigation {
+      .nav-item > {
+        a > span {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .navigation-header {
+    font-family: inherit;
+    color: #929292;
+    padding: 8px 20px;
+    font-size: 1rem;
+  }
+
+  .navbar-flipped {
+    .navbar-nav {
+      .nav-item {
+        float: right;
+      }
+    }
+  }
+
+  .navbar-light {
+    ul#main-menu-navigation>li.active>a {
+      border-bottom: 1px solid $info;
+      background: $white;
+    }
+
+    .active>a {
+      background: whitesmoke;
+      font-weight: 500;
+    }
+  }
+
+  .navbar-dark {
+    .nav-item {
+      &.active>a {
+        // border-bottom: 2px solid $primary;
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      &:hover,
+      .hover {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+    }
+
+    .active>a {
+      background: whitesmoke;
+      font-weight: 500;
+    }
+  }
+
+  &[data-col="content-left-sidebar"] .sticky-wrapper {
+    float: none;
+  }
+}
+
+.material-horizontal-layout {
+  .header-navbar {
+    .navbar-container {
+      .dropdown-menu {
+        .dropdown-submenu {
+          .dropdown-item.dropdown-toggle {
+            padding-right: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.material-horizontal-layout,
+.material-horizontal-nav {
+  .main-menu .navigation>li{
+      >a i{ 
+        position: relative;
+        top: 8px;
+        &.material-icons {
+          font-size: 1.3rem;
+        }
+      }
+      >ul>li>a i {
+        &.material-icons {
+        font-size: 1.3rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width : 1200px) and (min-width: 992px){
+  .material-horizontal-layout{
+    .navbar-with-menu.navbar-brand-center{
+      .navbar-wrapper {
+        .navbar-container {
+          .collapse .nav{
+            .nav-link-expand, .mega-dropdown .dropdown-toggle{
+              padding-right: 0rem;
+              padding-left: 0rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Import vertical-overlay-menu.scss for small screen support
+@import "material-vertical-overlay-menu.scss";

@@ -1,0 +1,160 @@
+// For Badges
+
+.badge {
+    padding: 0.2rem 0.5rem;
+
+    .dropdown-toggle:hover {
+        text-decoration: none;
+    }
+
+    .dropdown-toggle::after {
+        position: relative;
+        top: 0px;
+    }
+}
+
+.badge[class*='badge-'] span {
+    bottom: 0;
+}
+
+// For Badges In Table
+
+.table {
+    tr {
+        td {
+
+            .badge.badge-primary.label-square {
+                span {
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+//Notification Dropdown badge
+
+@media only screen and (max-width: 767px) {
+    .material-vertical-layout, .material-horizontal-layout {
+        .header-navbar .navbar-container .dropdown-notification{
+            .badge-up{
+                position: absolute !important;
+                right: 6px !important;
+                top: 5px !important;
+            }
+        }
+    }
+}
+
+.dropdown-notification .notification-tag {
+    top: -2.5rem !important;
+
+    &.badge {
+        padding: 0.3rem;
+    }
+}
+
+
+// For Badges In Sidebar(Main Menu)
+
+.material-vertical-layout.vertical-layout .main-menu .navigation>li>a>span.badge {
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+    right: 20px;
+    position: absolute;
+}
+
+
+// For Support Menu(Horizontal)
+
+.horizontal-layout {
+    .nav-item {
+        .nav-link {
+
+            span.badge.badge.badge-pill.badge-warning.float-right.mt-0,
+            span.badge.badge.badge-pill.badge-success.float-right.mt-0 {
+                padding: 0.2rem 0.5rem;
+                position: relative;
+                bottom: 2px;
+            }
+        }
+    }
+}
+
+//For Hospital Menu
+.diesase-badge {
+    margin-bottom: 0.5rem;
+}
+
+// For Pill Badge
+
+.btn-group {
+    .badge.badge-pill {
+        border-radius: 1rem;
+    }
+}
+
+// For Bordered Badges
+
+.badge-border {
+    border: 1px solid;
+}
+
+// For card-ecommerce
+
+@media only screen and (max-width: 768px) {
+    .material-vertical-layout{
+        &.vertical-layout{
+            #recent-buyers{
+                &.media-list{
+                    .media-body{
+                        .list-group-item-text{
+                            .badge{
+                                padding: 0.2rem 0.3rem !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// For component-tabs
+.material-vertical-layout{
+    &.vertical-layout{
+        #tabs-with-labels-pills{
+            .nav-link{
+                .badge{
+                    position: relative;
+                    top: -3px;
+                }
+            }
+        }
+        #vertical-tabs{
+            .nav-vertical{
+                .nav-link{
+                    .badge{
+                        position: relative;
+                        top: -3px;
+                        left: -7px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Badge-pill in app-content
+.material-layout{
+    .app-content{
+        .badge{
+            &.badge-pill{
+                padding-top: 0.05rem;
+                padding-bottom: 0.05rem;
+            }
+        }
+    }
+}
+

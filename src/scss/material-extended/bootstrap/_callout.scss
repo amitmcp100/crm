@@ -1,0 +1,174 @@
+.bs-callout-primary,
+.bs-callout-success,
+.bs-callout-danger,
+.bs-callout-info,
+.bs-callout-warning,
+.bs-callout-pink {
+
+    .media-left,
+    .media-right {
+        .la {
+            position: relative;
+            top: -0.25rem;
+        }
+
+        .la-cloud {
+            position: relative;
+            top: 0.63rem;
+        }
+    }
+}
+
+// Callout-Round
+
+.callout-round {
+
+    .media-left {
+        .la {
+            position: relative;
+            top: -0.2rem;
+            left: 0.25rem;
+        }
+    }
+
+
+    .media-right {
+        .la {
+            position: relative;
+            top: -0.2rem;
+            right: 0.2rem;
+        }
+    }
+}
+
+
+// For Medium and Large
+
+@media screen and(max-width: 1024px) {
+
+    .bs-callout-primary,
+    .bs-callout-success,
+    .bs-callout-danger,
+    .bs-callout-info,
+    .bs-callout-warning,
+    .bs-callout-pink {
+
+        .media-left,
+        .media-right {
+            .la {
+                position: relative;
+                top: 0.7rem;
+            }
+
+            .la-cloud {
+                position: relative;
+                top: 1.5rem;
+            }
+        }
+    }
+
+    .callout-round {
+
+        .media-left {
+            .la {
+                position: relative;
+                top: 0.5rem;
+                left: 0.25rem;
+            }
+
+            .la-bullseye {
+                position: relative;
+                top: 1rem;
+            }
+        }
+
+
+        .media-right {
+            .la {
+                position: relative;
+                top: 0.5rem;
+                right: 0.2rem;
+            }
+
+            .la-bullseye {
+                position: relative;
+                top: 1rem;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:540px) {
+
+    .bs-callout-primary,
+    .bs-callout-success,
+    .bs-callout-danger,
+    .bs-callout-info,
+    .bs-callout-warning,
+    .bs-callout-pink {
+
+        .media-left,
+        .media-right {
+            .la {
+                position: relative;
+                top: 3.2rem;
+            }
+
+            .la-cloud,
+            .la-sliders {
+                position: relative;
+                top: 4rem;
+            }
+        }
+    }
+
+    .callout-round {
+
+        .media-left {
+            .la {
+                position: relative;
+                top: 3rem;
+                left: 0.25rem;
+            }
+
+            .la-bullseye {
+                position: relative;
+                top: 4.3rem;
+            }
+        }
+
+
+        .media-right {
+            .la {
+                position: relative;
+                top: 3.8rem;
+                right: 0.2rem;
+            }
+
+            .la-bullseye {
+                position: relative;
+                top: 5rem;
+            }
+        }
+    }
+
+    .bs-callout-primary,
+    .bs-callout-warning,
+    .bs-callout-pink {
+        .animationIcon {
+            bottom: 0rem !important;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .bs-callout-primary,
+    .bs-callout-warning,
+    .bs-callout-pink {
+        .animationIcon {
+            bottom: 2rem;
+        }
+    }
+}

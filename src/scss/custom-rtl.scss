@@ -1,0 +1,501 @@
+// ================================================================================================
+//  File Name: custom-rtl.scss
+//  Description: Modern RTL support SCSS file.
+//  ----------------------------------------------------------------------------------------------
+//  Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+//   Version: 3.0
+//  Author: PIXINVENT
+//  Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+// Core variables and mixins
+@import "bootstrap/functions";
+@import "bootstrap/mixins";
+@import "bootstrap-extended/mixins";
+
+// Core variables and mixins overrides
+@import "core/variables/variables";
+@import "bootstrap/variables";
+
+@import "core/variables/components-variables";
+
+
+
+// Align icons position
+.main-menu {
+  .navigation li > a > i,
+  .dropdown-menu i,
+  .dropdown-user > a > i,
+  .navigation > li > a > i {
+    float: right;
+  }
+}
+
+.dropdown-user.nav-item i {
+  float: right;
+}
+
+.horizontal-menu {
+  .main-menu-content {
+    #main-menu-navigation > li > a > i {
+      float: right;
+      top: -4px;
+      position: relative;
+    }
+  }
+  &.menu-collapsed{
+    .main-menu-content #main-menu-navigation > li > a {
+      padding: 2.5rem 1rem;
+      > i {
+        top: -9px;
+        position: relative;
+      }
+    }
+  }
+}
+
+.mega-dropdown-menu {
+  li {
+    a,
+    h6 {
+      i {
+        float: right;
+      }
+    }
+  }
+}
+
+.menu-expanded .form-group i {
+  float: inherit;
+}
+
+.form-control-position i {
+  top: 25%;
+  position: absolute;
+  right: 25%;
+}
+
+// Echart title fix for RTL
+.echart-container {
+  direction: ltr;
+}
+
+.mm-menu {
+  left: auto;
+}
+
+// Dopzone horizontal scrollbar issue
+.dz-hidden-input {
+  position: relative !important;
+}
+
+// rtl version sticky sidebar float
+.content-wrapper .sticky-wrapper,
+.content-right-sidebar .sticky-wrapper {
+  float: left;
+}
+
+// jquery ui icon position rtl fix TODO:AJ: add rtl support for jQ UI
+.ui-widget-icon-block {
+  right: 50%;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+  right: 3rem;
+}
+
+.square {
+  &.slider-xl {
+    .noUi-handle {
+      &:before {
+        left: 5px;
+      }
+
+      &:after {
+        left: 10px;
+      }
+    }
+  }
+
+  .noUi-handle {
+    &:before {
+      left: 2px;
+    }
+
+    &:after {
+      left: 7px;
+    }
+  }
+}
+
+.noUi-vertical {
+  &.square {
+    .noUi-handle {
+      &:before {
+        left: -1px;
+      }
+
+      &:after {
+        left: -1px;
+      }
+    }
+  }
+}
+
+#tubular-container {
+  z-index: 0 !important;
+}
+
+.btn i[class^="icon-"],
+.btn i[class*=" icon-"] {
+  line-height: 1.25rem;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  direction: ltr;
+}
+
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
+.jp-card {
+  .jp-card-front {
+    .jp-card-lower {
+      .jp-card-expiry {
+        right: 65%;
+      }
+    }
+  }
+}
+
+// Delete button RTL SCSS
+.delete-all {
+  top: 3.75rem;
+}
+// Todo
+
+.todo {
+  .app-content {
+    .list-group {
+      .list-group-item {
+        i {
+          float: right !important;
+        }
+      }
+    }
+  }
+}
+
+// Email Application
+
+.email-application {
+  .app-content {
+    .list-group {
+      .list-group-item {
+        i {
+          float: right !important;
+        }
+      }
+    }
+  }
+}
+
+// FAQ page accordion CSS
+.faq{
+  .accordion{
+    .btn{
+      i{
+        float: right;
+        margin-left: 8px;
+      }
+    } 
+  }
+}
+
+
+//Material Mega Menu
+.material-vertical-layout, .material-horizontal-layout{
+  .mega-dropdown-menu {
+    .form-horizontal{
+      .has-icon-left{
+        .form-control-position{
+          padding-right: 0 !important;
+          i{
+            top: 40%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// For customizer - material-vertical-modern-menu
+.material-vertical-layout{
+  // user-profile dropdown icons
+  .main-menu {
+    .user-profile {
+      .user-info {
+        .dropdown-menu{
+          right: 8.75rem;
+          .dropdown-item{
+            i{
+              position: relative;
+              top: 7px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.menu-collapsed {
+    .main-menu.menu-dark, .main-menu.menu-light {
+      .user-profile {
+        .user-img {
+            width: 75% !important;
+            transition: 300ms ease all;
+        }
+        .dropdown-toggle {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        div.text-light,
+        .user-name {
+            white-space: nowrap;
+            display: none;
+        }
+      }
+    }
+  }
+}
+
+// For Material Icons in main menu
+
+.material-vertical-layout {
+  .main-menu .navigation>li>a i {
+    position: relative;
+    top: 7px !important;
+  }
+}
+
+// Align icons position
+.material-vertical-layout {
+  &.vertical-content-menu{
+    &.menu-collapsed{
+      .main-menu .navigation>li>a i {
+        float: none;
+      }
+    }
+  }
+}
+
+//For Material Content-menu
+@media only screen and (max-width: 1100px) and (min-width: 992px) {
+    .material-vertical-layout {
+        &.vertical-content-menu {
+            .header-navbar{
+                .navbar-container{
+                    ul.nav{
+                        a.nav-link-expand{
+                            padding: 1.7rem 0.3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//For Material Horizontal, Hirozontal-Nav Menu Icons
+.material-horizontal-layout,
+.material-horizontal-nav {
+  .main-menu-content #main-menu-navigation > li > a > i {
+    top: 4px;
+    position: relative;
+  }
+
+  .main-menu .navigation>li{
+      >a i{ 
+        position: relative;
+        top: 4px;
+        &.material-icons {
+          font-size: 1.3rem;
+        }
+      }
+      >ul>li>a i {
+        &.material-icons {
+        font-size: 1.3rem;
+        position: relative;
+        top: 7px;
+      }
+    }
+  }
+}
+
+// @import "material-user-profile";
+
+.material-vertical-layout.menu-collapsed {
+  .main-menu {
+    .user-profile {
+      .user-info {
+        .dropdown-menu {
+          right: -6rem;
+          min-width: 11rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width : 991px) and (min-width: 768px){
+    .material-vertical-layout, .material-horizontal-layout{
+        &.horizontal-layout{
+            .navbar-wrapper {
+                .navbar-container {
+                    .collapse { 
+                        .nav {
+                            .nav-link-search {
+                                .dropdown-menu.arrow{
+                                    // position: absolute;
+                                    right: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.material-horizontal-nav{
+            .navbar-wrapper {
+                .navbar-container {
+                    .collapse { 
+                        .nav {
+                            .nav-link-search {
+                                .dropdown-menu.arrow{
+                                    right: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.vertical-overlay-menu, &.vertical-content-menu{
+            .navbar-wrapper {
+                .navbar-container {
+                    .collapse {
+                        .nav {
+                            .nav-link-search {
+                              .nav-link{
+                                  &.dropdown-toggle{
+                                    padding: 1.9rem 1rem !important;
+                                  }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 767px){
+  .vertical-overlay-menu{
+    &[data-menu="vertical-compact-menu"]{
+      &.boxed-layout{
+        &.menu-open {
+          .main-menu {
+            transform: translate3d(-($overlay-menu-width + 16px), 0, 0) !important;
+          }
+        }
+      }
+    }
+    &[data-menu="vertical-menu-modern"]{
+      &.boxed-layout{
+        &.menu-open {
+          .main-menu {
+            transform: translate3d(-($overlay-menu-width + 87px), 0, 0) !important;
+          }
+        }
+      }
+    }
+  }
+  .material-vertical-layout, .material-horizontal-layout{
+      &.horizontal-layout {
+          .navbar-wrapper {
+              .navbar-container {
+                  .navbar-nav .nav-link{
+                      color: $white;
+                  }
+              }
+          }
+      }
+  }
+}
+
+.material-vertical-layout.vertical-content-menu {
+  .navbar-wrapper {
+    .navbar-container {
+      .collapse .nav{
+          .nav-link-search {
+            .nav-link{
+              padding: 1rem !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+// Perfact scrollbar RTL fix
+body .ps__rail-y{
+  right:-6px !important
+}
+
+//vertical-compact-menu
+.vertical-compact-menu{
+  &.menu-open{
+    &.boxed-layout {
+      .main-menu{
+        transform: translate3d(-($compact-menu-width - 16px), 0, 0) !important;
+      }
+    }
+  }
+}
+//vertical-menu
+@include media-breakpoint-down(md) {
+  body.vertical-layout {
+    &.vertical-overlay-menu {
+      &[data-menu="vertical-menu"] {
+
+        //Box-layout
+        &.boxed-layout{
+           &.menu-open {
+              .main-menu {
+                 transform: translate3d(-($overlay-menu-width), 0, 0) !important;
+              }
+           }
+        }
+      }
+    }
+  }
+}
+
+
+// .vertical-overlay-menu {
+//   // Compact menu flipped layout specific scss
+//     &.menu-open {
+//        &.boxed-layout {
+//         .main-menu {
+//           margin-right: 104px;
+//        }
+//       }
+//     }
+//   }

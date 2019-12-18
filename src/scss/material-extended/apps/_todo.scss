@@ -1,0 +1,16 @@
+.form-group-compose {
+    .btn {
+        padding: $btn-padding-y $btn-padding-x;
+    }
+}
+
+.todo-details {
+    .search {
+        .basic-search {
+            border-radius: $border-radius !important;
+            border: none !important;
+            border-bottom: 1px solid $border-color !important;
+            outline: none !important;
+        }
+    }
+}

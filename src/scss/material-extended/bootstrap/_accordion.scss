@@ -1,0 +1,37 @@
+.card.collapse-icon.accordion-icon-rotate {
+    .card-body {
+        .media-list.list-group {
+            .list-group-item:hover {
+                background: transparent;
+
+                .text-bold-600 {
+                    color: map-get($map: $info, $key:color);
+                }
+            }
+        }
+    }
+}
+
+// Mega Menu Accordion Section
+
+.material-vertical-layout, .material-horizontal-layout{
+  .header-navbar{
+    .navbar-container{
+      .mega-dropdown-menu{
+        .collapse-icon{
+          a[data-toggle="collapse"]{
+            &:after{
+              margin-top: -6px;
+            }
+            &:before{
+              margin-top: -8px;
+            }
+          }
+           a[aria-expanded="true"]{
+            padding : 0.2rem 0;
+          }
+        }
+      }
+    }
+  }
+}

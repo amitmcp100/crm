@@ -1,0 +1,13 @@
+// scroll to Top Footer Button
+
+#scroll-top{
+    width:40px; 
+    height:40px;
+    z-index: 99;
+    position:fixed;
+    bottom:100px;
+    right:30px;
+    display:none;
+    cursor: pointer;
+    background: url('../../app-assets/images/slider/top.png') no-repeat;
+}

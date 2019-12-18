@@ -1,0 +1,13 @@
+.alert {
+    border-style: solid;
+    color: $white;
+
+    // background color for alter-light class
+    &.alert-light{
+    	 background-color: darken(map-get($light,color),14%);
+    }
+
+    .close {
+        color: $white;
+    }
+}

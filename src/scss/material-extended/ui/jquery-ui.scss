@@ -1,0 +1,20 @@
+// For Jquery UI
+
+.jqueryui-ele-container {
+    .ui-menu.ui-front {
+        z-index: 1049;
+    }
+}
+
+// For UI Button
+
+.ui-button.ui-corner-all {
+    border-radius: $border-radius;
+}
+
+// For Input Group UI
+.ui-spinner {
+    .ui-spinner-button:after {
+        top: 7px !important;
+    }
+}

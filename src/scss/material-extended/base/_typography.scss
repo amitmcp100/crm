@@ -1,0 +1,33 @@
+/* This is material font variable scss */
+
+body.material-layout {
+	font-family: $font-family-base;
+	.navigation{
+		font-family: $font-family-monospace;
+		.navigation-header {
+			font-family: $font-family-monospace;
+		}
+	}
+	.breadcrumb {
+		font-family: $font-family-monospace;
+	}
+	.navbar-nav {
+		.mega-dropdown-menu {
+			font-family: $font-family-sans-serif;
+		}
+	}
+	.header-navbar {
+		font-family: $font-family-monospace;
+	}
+
+	/* Quill Editor */
+	.ql-editor{
+		font-family: $font-family-base;
+		h1, h2, h3, h4, h5, h6,{
+			font-family: $font-family-base;
+		}
+	}
+	.ql-toolbar{
+		font-family: $font-family-base;
+	}
+}

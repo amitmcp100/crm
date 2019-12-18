@@ -1,0 +1,35 @@
+// For List Group Shadow
+
+.list-group {
+
+    .news-feed-item-1,
+    .news-feed-item-img,
+    .news-feed-item-2,
+    .news-feed-item-3,
+    .news-feed-item-4,
+    .news-feed-item-5 {
+        box-shadow: none;
+    }
+}
+
+.card {
+
+    .news-feed-food-card-bg,
+    .news-feed-food-card2-bg,
+    .news-feed-food-card3-bg {
+        .btn {
+            margin-top: 1rem;
+        }
+    }
+}
+
+.card {
+    .card-body {
+        .news-feed-btn.btn-sm.float-right {
+            i {
+                position: relative;
+                right: 2px;
+            }
+        }
+    }
+}

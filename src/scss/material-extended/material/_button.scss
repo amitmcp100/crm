@@ -1,0 +1,70 @@
+//Material btn
+.btn {
+    max-width: unset !important;
+}
+
+// For btn float
+.heading-elements {
+    .btn-float {
+        height: auto !important;
+        width: auto !important;
+    }
+}
+
+.btn-float {
+    border-radius: 50%;
+    height: 3.5rem;
+    width: 3.5rem;
+    line-height: 3.5rem;
+    padding: 14px !important;
+    box-shadow: map-get($btn-float-elevation-shadow, shadow) !important;
+
+    &.active,
+    &:active {
+        box-shadow: map-get($btn-float-elevation-shadow-active, shadow) !important;
+    }
+}
+
+// For btn-float-dropdown
+.btn-float-dropdown {
+    i {
+        margin-right: 0 !important;
+    }
+
+    &.dropdown,
+    &.dropup {
+        .dropdown-menu {
+            border-radius: $border-radius !important;
+            margin-top: $btn-float-dropdown-inner-spacer-y !important;
+            min-width: $btn-float-size !important;
+            background: transparent;
+            box-shadow: none !important;
+            border: none !important;
+
+            .btn-float {
+                i {
+                    position: relative;
+                    top: -2px;
+                    right: 5px;
+                }
+            }
+        }
+    }
+}
+
+// btn-small with btn-float
+.btn-float {
+    &.btn-sm {
+        i {
+            position: relative;
+            top: -2px;
+            right: 6px;
+        }
+    }
+}
+
+// btn-group
+
+.btn-group {
+    box-shadow: none;
+}

@@ -1,0 +1,19 @@
+// Change link color of content-wrapper
+html{
+	body{
+		a {
+			color: theme-color(primary);
+
+		    &:hover,
+		    &:focus {
+		        text-decoration: none;
+		        color: darken(theme-color(primary), 10);
+		    }
+		}
+	}
+}
+
+//Change text-light color
+.text-light {
+    color: $text-light !important;
+}

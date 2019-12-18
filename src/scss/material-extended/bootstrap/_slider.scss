@@ -1,0 +1,22 @@
+// For NoUi Slider
+
+.noUi-target {
+    .noUi-pips {
+        .noUi-value {
+            top: 20%;
+        }
+    }
+
+    &.noUi-vertical {
+
+        .noUi-base {
+            .noUi-origin {
+                .noUi-handle-upper {
+                    .noUi-tooltip {
+                        right: 150%;
+                    }
+                }
+            }
+        }
+    }
+}

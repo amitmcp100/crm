@@ -1,0 +1,55 @@
+.navbar {
+    .nav-item {
+        .nav-link:hover {
+            background: transparent;
+        }
+    }
+
+    .navbar-brand:focus {
+        background: transparent;
+    }
+    
+    .navbar-wrapper {
+        .navbar-container {
+            .form-inline {
+                .input-group {
+                    margin-top: 0;
+                }
+            }
+
+            .input-group {
+                margin-top: 0;
+            }
+
+            .skin {
+                label {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+.fixed-bottom,
+.fixed-top {
+    z-index: 1050;
+}
+
+.navbar-dark,
+.navbar-semi-light {
+    .navbar-wrapper {
+        .navbar-container {
+            .nav {
+                .nav-link-search {
+                    .round.form-control {
+                        color: #6b6f82;
+
+                        &::placeholder {
+                            color: #6b6f82;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

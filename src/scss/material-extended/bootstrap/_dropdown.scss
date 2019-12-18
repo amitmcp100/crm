@@ -1,0 +1,42 @@
+// For Dropdown
+
+.dropdown-menu {
+    background: $white;
+    border: 1px solid $border-color;
+    z-index: 1000;
+    box-shadow: map-get($menu-elevation-shadow, shadow);
+    border-radius: $border-radius !important;
+
+    .dropdown-item {
+        padding: $menu-link-padding-y $menu-link-padding-x;
+        .skin-polaris {
+            label {
+                color: $menu-link-color;
+            }
+        }
+    }
+    &.arrow:before,
+    .arrow-right:before,
+    .arrow-left:before {
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    &.arrow-right:after,
+    &.arrow-right:before {
+        position: absolute;
+        left: 9.7rem;
+    }
+
+    & .dropdown-submenu .arrow-right:before {
+        border-left-color: $black;
+    }
+}
+//dropdown-notification
+.dropdown-notification {
+    .media-list {
+        .waves-effect {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,405 @@
+/*=========================================================================================
+	File Name: vertical-compact-menu.scss
+	Description: A compact size menu provides more space to content part with open and hide support.
+	It support light & dark version, filpped layout, right side icons, native scroll and borders menu
+	item seperation.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	 Version: 3.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+// Core variables and mixins
+@import "../../../bootstrap/functions";
+@import "../../../bootstrap/mixins";
+@import "../../../bootstrap-extended/mixins";
+
+// Core variables and mixins overrides
+@import "../../variables/variables";
+@import "../../../bootstrap/variables";
+
+@import "../../variables/components-variables";
+
+// Import first main menu mixin
+@import "../../mixins/main-menu-mixin";
+
+// Vertical Compact Menu
+//=========================
+.vertical-compact-menu {
+   .content {
+      @include main-menu-width($compact-menu-width);
+   }
+
+   .navbar {
+      .navbar-header {
+         @include menu-navbar-width($compact-menu-width);
+      }
+
+      .navbar-container {
+         @include main-menu-width($compact-menu-width);
+      }
+
+      &.navbar-brand-center {
+         .navbar-container {
+            @include main-menu-width(0);
+         }
+
+         .navbar-header {
+            @include menu-navbar-width(auto);
+         }
+      }
+   }
+
+   .main-menu {
+      width: $compact-menu-width;
+      left: 0;
+
+      // template specifix large profile image with center aligned
+      .main-menu-header {
+         .user-content {
+            .media-left {
+               display: block;
+               text-align: center;
+               padding: 0;
+
+               .avatar-md {
+                  width: 60px;
+                  text-align: center;
+               }
+            }
+
+            .media-body {
+               display: block;
+               text-align: center;
+               margin: 0;
+               padding: 0;
+               width: auto;
+               margin-top: 0.5rem;
+            }
+
+            .media-right {
+               display: none;
+            }
+         }
+      }
+
+      //content menu mixin
+      // $menu-expanded-width: a common with for all popout menu
+      @include menu-content($menu-expanded-width, $compact-menu-width, $menu-light-color, $menu-light-bg);
+      ul.menu-popout li {
+         i {
+            font-size: 1.6rem;
+            margin-right: 12px;
+            position: relative;
+            top: 2px;
+         }
+      }
+      .main-menu-content > ul > li > ul.menu-content > li a {
+         line-height: 1.4;
+         padding: 4px 18px 4px 45px;
+      }
+      .main-menu-content > ul.menu-content li.has-sub > a:not(.mm-next):after {
+         top: 9px;
+      }
+      ul.menu-popout .open > ul .open {
+         background: transparent;
+         > ul {
+            background: transparent;
+         }
+      }
+      .navigation {
+         overflow: visible;
+         > li.navigation-header {
+            padding: 12px 20px;
+            text-align: center;
+            font-weight: 800;
+            .la-ellipsis-h,
+            .nav-menu-icon {
+               visibility: hidden;
+               display: none;
+               opacity: 0;
+            }
+         }
+         > li {
+            > ul li > a {
+               padding: 10px 18px 10px 54px;
+            }
+            > a {
+               width: auto;
+               padding: 1.4rem 0.8rem;
+               text-align: center;
+               border-bottom: 1px solid #e8e8e8;
+               transition: visibility 0.25s, opacity 0.25s;
+               font-size: 1rem;
+               > i {
+                  display: block;
+                  width: 100%;
+                  margin: 0 auto;
+                  font-size: 2.5rem;
+                  margin: 0.2rem 0 0.8rem 0;
+                  text-align: center;
+
+                  &:before {
+                     transition: 200ms ease all;
+                  }
+               }
+               > span {
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  vertical-align: middle;
+               }
+            }
+            &.hover {
+               & > ul {
+                  display: none;
+               }
+               > a {
+                  //span is requires as the compact menu has in
+                  > span {
+                     visibility: visible;
+                     opacity: 1;
+                  }
+               }
+            }
+            &.active {
+               > a {
+                  font-weight: 400;
+                  background: transparent;
+                  border-right: 4px solid $primary;
+                  > i {
+                     transform: translateX(0px);
+                  }
+               }
+               > a > span {
+                  transform: translateX(0px);
+               }
+            }
+         }
+      }
+
+      .mTSWrapper {
+         overflow: visible;
+      }
+   }
+
+   // Compact menu open
+   &.menu-open {
+      .main-menu {
+         opacity: 1;
+         transition: transform 0.25s, opacity 0.25s, top 0.35s, height 0.35s;
+         transform: translate3d(0, 0, 0);
+         backface-visibility: hidden;
+         perspective: 1000;
+      }
+
+      .content,
+      .footer {
+         @include main-menu-width($compact-menu-width);
+      }
+
+      //Brand center content expanded
+      .navbar-brand-center {
+         .content,
+         .footer {
+            @include main-menu-width(0);
+         }
+      }
+
+      &.boxed-layout {
+         .main-menu {
+            transform: translate3d(($compact-menu-width), 0, 0);
+         }
+      }
+   }
+
+   // Compact menu hide
+   &.menu-hide {
+      .content {
+         @include main-menu-width(0);
+      }
+
+      .main-menu {
+         opacity: 0;
+         transition: transform 0.25s, opacity 0.25s, top 0.35s, height 0.35s;
+         transform: translate3d(-($compact-menu-width), 0, 0);
+         backface-visibility: hidden;
+         perspective: 1000;
+      }
+
+      //Brand center content collapsed
+      .content,
+      .footer {
+         @include main-menu-width(0);
+      }
+
+      .navbar-brand-center {
+         .content,
+         .footer {
+            @include main-menu-width(0);
+         }
+      }
+   }
+
+   // Compact menu flipped layout specific scss
+   &.menu-flipped {
+      .content {
+         @include vertical-flipped-menu($compact-menu-width);
+      }
+
+      // Main menu flipped
+      .main-menu {
+         right: 0;
+         left: inherit;
+
+         ul.menu-content {
+            right: $compact-menu-width;
+            left: inherit;
+         }
+
+         .navigation {
+            > li {
+               > ul {
+                  right: $compact-menu-width;
+                  left: inherit;
+               }
+            }
+         }
+      }
+
+      //Navbar expanded flipped
+      .navbar {
+         .navbar-header {
+            float: right;
+         }
+
+         .navbar-container {
+            @include vertical-flipped-menu($compact-menu-width);
+         }
+      }
+
+      &.menu-open {
+         &.boxed-layout {
+            .main-menu {
+               transform: translate3d(-($compact-menu-width), 0, 0);
+            }
+         }
+      }
+
+      &.menu-hide {
+         .content {
+            @include vertical-flipped-menu(0);
+         }
+
+         .main-menu {
+            @include vertical-menu-transform-show($compact-menu-width);
+         }
+      }
+   }
+}
+
+// Initially menu & content width for lg and up screen
+@include media-breakpoint-up(lg) {
+   body {
+      &.vertical-compact-menu {
+         .main-menu {
+            width: $compact-menu-width;
+         }
+
+         .navbar {
+            .navbar-header {
+               width: $compact-menu-width;
+            }
+         }
+
+         .content,
+         .footer {
+            @include main-menu-width($compact-menu-width);
+         }
+      }
+   }
+}
+
+// Initially menu & content width for md and down screen
+@include media-breakpoint-down(md) {
+   body {
+      &.vertical-compact-menu {
+         .navbar {
+            .navbar-header {
+               width: 0;
+            }
+
+            //navbar-dark
+            &.navbar-dark {
+               #navbar-mobile {
+                  .search-input.open {
+                     .input {
+                        border-bottom: 1px solid $white;
+                     }
+                  }
+               }
+            }
+         }
+
+         //navbar-light
+         #navbar-mobile {
+            .search-input.open {
+               .input {
+                  border-bottom: 1px solid #2c303b;
+               }
+            }
+         }
+
+         .main-menu {
+            width: $compact-menu-width;
+         }
+
+         .navbar {
+            .navbar-header {
+               width: $compact-menu-width;
+            }
+         }
+
+         .content,
+         .footer {
+            @include main-menu-width($compact-menu-width);
+         }
+      }
+   }
+}
+
+// Initially menu & content width for sm and down screen
+@include media-breakpoint-down(sm) {
+   body {
+      &.vertical-compact-menu {
+         .content,
+         .footer {
+            @include main-menu-width(0);
+         }
+      }
+   }
+}
+
+// Collapsed menu RTL
+[data-textdirection="rtl"] body.vertical-layout {
+   &.vertical-compact-menu {
+      .main-menu .navigation > li > a > span {
+         display: none;
+      }
+   }
+}
+
+// Import vertical-overlay-menu.scss for small screen support
+@import "vertical-overlay-menu.scss";
+
+// For overlay menu of compact for small screen
+@include media-breakpoint-down(sm) {
+   .main-menu .navigation li a i {
+      font-size: 1.4rem;
+      margin-right: 4px;
+   }
+   .main-menu .navigation > li > a i {
+      top: 2px !important;
+   }
+}

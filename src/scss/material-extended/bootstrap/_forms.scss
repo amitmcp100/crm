@@ -1,0 +1,396 @@
+.form-control-file {
+    border-bottom: none;
+    max-height: none;
+}
+input, select{
+    &.form-control{
+        // background: $white;
+        border: none;
+        border-bottom: 1px solid $textfield-border-color;
+        &:disabled, &[readonly]{
+            border-style: dotted;
+            background-color: $white;
+            border-width: 0 0 1px;
+        }
+    }
+}
+textarea, textarea.form-control:not([rows='1']){
+    border: none;
+    border-bottom: 1px solid $textfield-border-color;
+    border-radius: 0;
+}
+
+.form-section {
+    border-bottom: 1px solid $textfield-border-color;
+    margin-bottom: 20px;
+    line-height: 3rem;
+}
+
+.form-control.round,
+.form-control.square {
+    border-width: 1px !important;
+    border: 1px solid $textfield-border-color;
+}
+
+// Input Group within form
+.input-group {
+    margin-top: 0.75rem;
+
+    .form-control.form-control-xl.input-xl.border-grey {
+        border-radius: $border-radius;
+        background-color: transparent;
+    }
+
+    .input-group-text {
+        padding: 0.35rem 1rem;
+    }
+
+    .input-group-prepend {
+        .btn {
+            .la-paper-plane {
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    // input-group-large
+
+    &.input-group-lg{
+        .form-control{
+            font-size: 1.25rem;
+            padding: 0.75rem 1.25rem;
+        }
+    }
+}
+
+// For custom-control
+
+.custom-control+.custom-control {
+    margin-top: 0;
+}
+
+.custom-control-label {
+    margin-bottom: 0.5rem;
+    &:before{
+        height: 3.42rem;
+        width: 3.42rem;
+    }
+}
+
+// For Date Type input
+.wizard-circle,
+.wizard-notification {
+    .body {
+        .form-group {
+            input[type="date"].form-control {
+                line-height: 2.45;
+            }
+        }
+    }
+}
+
+// Form Stripped
+form {
+    &.striped-rows,
+    &.striped-labels {
+        .form-group:nth-child(even) {
+            background-color: #F4F5FA;
+        }
+
+        .form-control {
+            background: transparent;
+        }
+    }
+}
+
+.form-actions {
+    border-top: 1px solid #E9EBF5;
+    padding: 20px 0;
+    margin-top: 20px;
+
+    &.top {
+        border-top: 0;
+        border-bottom: 1px solid #E9EBF5;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+}
+
+// Form Horizontal
+.form-horizontal {
+    .label-control {
+        display: none;
+    }
+
+    .form-group {
+        textarea {
+            line-height: inherit;
+        }
+        .input-lg {
+            border-radius: $border-radius;
+        }
+    }
+    &.row-separator,
+    &.form-bordered,
+    &.striped-rows,
+    &.striped-labels {
+        .label-control {
+            display: inline-block;
+            padding-top: 1.9rem;
+            text-align: right;
+            margin-bottom: 0.5rem;
+            margin-left: 0;
+            padding-right: 0.93rem;
+        }
+
+        .form-group {
+            border-bottom: 1px solid #E9EBF5;
+            margin-bottom: 0;
+
+            >div {
+                padding: 1.2rem;
+            }
+
+            &.last {
+                border-bottom: none;
+            }
+        }
+    }
+
+    // Form Striped
+    &.striped-labels {
+        border-bottom: none;
+
+        >div {
+            background-color: $white;
+        }
+    }
+
+    // Form Bordered
+    &.form-bordered {
+        .form-group {
+            >div {
+                padding-right: 0;
+                border-left: 1px solid #E9EBF5;
+            }
+        }
+        .form-actions {
+            margin-top: 1rem;
+        }
+    }
+}
+
+.position-relative {
+    &.has-icon-left {
+        .form-control {
+            padding-left: 2rem;
+        }
+    }
+}
+
+//For Travel booking Section
+
+.shopping-cart {
+    .tab-pane {
+        .form-actions {
+            padding-top: 1rem;
+        }
+    }
+}
+
+// For Time and Date Icons
+
+.form-group {
+
+    input[type="date"].form-control,
+    input[type="time"].form-control,
+    input[type="datetime-local"].form-control{
+        line-height: 2.4;
+        height: calc(2.75rem + 2px);
+        padding: .75rem 1rem !important;
+    }
+    .has-icon-left{
+        input[type="date"].form-control,
+        input[type="time"].form-control,
+        input[type="datetime-local"].form-control{
+            padding-left: 2rem !important;
+        }
+
+    }
+
+}
+
+// For Mega Dropodown
+
+.mega-dropdown-menu {
+    .form.form-horizontal {
+        .form-body {
+            .form-group {
+                label {
+                    margin-left: 0;
+                    padding-left: 1.5rem;
+                    padding-top: 0.7rem;
+                }
+
+                .position-relative {
+                    .form-control {
+                        border-radius: 0;
+                        border-bottom: 1px solid $border-color;
+                        background: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// For Extra Large, Large Input and Small
+
+.input-xl,
+.form-control-xl,
+.input-lg,
+.form-control-lg,
+.input-sm,
+.form-control-sm,
+.input-xs,
+.form-control-xs {
+    border-radius: $border-radius !important;
+}
+
+// For Labels from Input Grid
+
+.grid-with-inline-labels {
+    .card {
+        .card-body {
+            .form-body {
+                .form-group {
+                    label.col-md-4 {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// For Multiple Inputs
+.multiple-input-with-inline-labels {
+    .card {
+        .card-body {
+            .form-body {
+                .form-group {
+                    label.col-md-2 {
+                        margin-left: 0;
+                        padding-left: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//textarea
+
+textarea {
+    .form-control:not([rows='1']) {
+        padding: 1rem !important;
+    }
+}
+
+// Form Large
+select{
+    &.form-control:not([size]):not([multiple]){
+        &.input-lg{
+            padding: 0.5rem 0.75rem !important;
+        }
+    }
+}
+
+// Form Small
+select{
+    &.form-control:not([size]):not([multiple]){
+        &.input-sm{
+            padding: 0.2rem 0.95rem !important;
+        }
+    }
+}
+// input.form-control{
+//     &.input-sm + .form-control-position,
+//     &.form-group-sm > .form-control-position {
+//         width: $input-height-sm !important;
+//         height: $input-height-sm !important;
+//         line-height: $input-height-sm !important;
+//         top: 2px;
+//     }
+// }
+
+
+// For Simple Form In Authentication
+
+.form-horizontal.form-simple {
+    .form-group.position-relative.has-icon-left {
+        border-bottom: 1px solid $border-color;
+    }
+}
+
+// Form-control - Read Only
+
+.form-control[readonly]{
+    border-style: none;
+    background: $white;
+}
+
+// Type - File
+
+.form-control[type="file"] {
+    max-height: 4.25rem !important;
+}
+
+// For Form Tag Input's Add/REmove Btn
+
+@media screen and (max-width:768px) {
+    .tagging-methods {
+        .match-height {
+            .card {
+                .card-body {
+                    .form-group {
+
+                        .add-tagging,
+                        .remove-all-tagging,
+                        .remove-tagging,
+                        .refresh-tagging,
+                        .reset-tagging,
+                        .destroy-tagging,
+                        .add-special-keys,
+                        .focus-input,
+                        .get-special-keys,
+                        .val-input {
+                            margin-left: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:540px) {
+    .grid-with-inline-labels {
+        .card {
+            .card-body {
+                .form-body {
+                    .form-group {
+                        label.col-md-4.text-right {
+                            margin-right: 0.5rem;
+                        }
+
+                        label.col-md-4 {
+                            margin-left: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

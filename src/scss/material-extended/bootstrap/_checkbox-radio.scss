@@ -1,0 +1,155 @@
+// For Checkbox's Skin
+
+.skin {
+    label {
+        margin-bottom: 0.5rem;
+        color: $black;
+    }
+}
+
+// For Checkbox's Square Skin
+
+.skin-square {
+    label {
+        margin-bottom: 0.75rem;
+        color: $black;
+    }
+}
+
+.form-group {
+    label {
+        padding: 0rem;
+        margin-left: 0.5rem;
+
+        input[type='checkbox']:checked+img.img-thumbnail {
+            background-color: map-get($map: $primary, $key: color);
+            color: #999966;
+            border-color: map-get($map: $primary, $key: color);
+        }
+
+        .img-thumbnail {
+            padding: 0.25rem;
+        }
+    }
+}
+
+// For checkboxes
+
+.custom-control-input:checked~.custom-control-label::after {
+    color: map-get($map: $info, $key: color);
+}
+
+.table {
+    .card-body {
+
+        input[type="checkbox"].switch,
+        input[type="radio"].switch {
+            opacity: 1;
+        }
+    }
+}
+
+// For Colored Checkbox
+
+.bg-primary {
+    &:checked~.custom-control-label::after {
+        color: map-get($map: $primary, $key: color);
+    }
+}
+
+
+.bg-success {
+    &:checked~.custom-control-label::after {
+        color: map-get($map: $success, $key: color);
+    }
+}
+
+.bg-danger {
+    &:checked~.custom-control-label::after {
+        color: map-get($map: $danger, $key: color);
+    }
+}
+
+
+.bg-warning {
+    &:checked~.custom-control-label::after {
+        color: map-get($map: $warning, $key: color);
+    }
+}
+
+.bg-purple {
+    &:checked~.custom-control-label::after {
+        color: map-get($map: $primary, $key: color);
+    }
+}
+
+
+// For Pink Radio
+
+input[type="radio"].bg-pink+.custom-control-label:after {
+    color: #E91E63;
+}
+
+// For Image Checkbox
+
+.image-checkbox {
+    .form-group {
+        label {
+            margin-left: 0;
+        }
+    }
+}
+
+//e-commerce 
+
+//input group
+
+.product-detail {
+    .product-count {
+        .input-group {
+            margin-top: 0;
+        }
+
+    }
+}
+
+//touchspin
+@media screen and (max-width: 768px) {
+    .shopping-cart {
+        .table {
+            .input-group.bootstrap-touchspin {
+                width: 153% !important;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 910px) {
+    .shopping-cart {
+        .table {
+            .input-group.bootstrap-touchspin {
+                width: 145% !important;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 911px) and (max-width: 991px) {
+    .shopping-cart {
+        .table {
+            .input-group.bootstrap-touchspin {
+                width: 127% !important;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1142px) {
+    .shopping-cart {
+        .table {
+            .input-group.bootstrap-touchspin {
+                width: 130% !important;
+            }
+        }
+    }
+}

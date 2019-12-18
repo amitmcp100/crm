@@ -1,0 +1,45 @@
+// For Animation Icon Position
+
+.alertAnimation {
+    i.icon-arrow-right {
+        position: relative;
+        top: 2px;
+        right: -5px;
+    }
+
+    .alert-success {
+        .icon-arrow-right {
+            top: -4px;
+            right: -7px;
+        }
+    }
+
+    .alert-primary {
+        .icon-arrow-right {
+            top: -1.2rem;
+            left: 0.7rem;
+        }
+    }
+}
+
+// Callouts
+.calloutAnimation {
+
+    .bs-callout-primary,
+    .bs-callout-success,
+    .bs-callout-pink,
+    .bs-callout-warning {
+        .icon-arrow-right {
+            position: relative;
+            bottom: 10px;
+        }
+    }
+
+    .bs-callout-danger,
+    .bs-callout-info {
+        .icon-arrow-right {
+            position: relative;
+            top: 7px;
+        }
+    }
+}

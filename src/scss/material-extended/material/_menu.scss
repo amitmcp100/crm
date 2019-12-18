@@ -1,0 +1,23 @@
+//for cascading dropdown menu
+
+.dropdown {
+   .dropdown-menu {
+      &.menu {
+         margin-top: -2.875rem;
+      }
+      &.menu-cascading,
+      &.dropdown-menu-sm {
+         min-width: $menu-min-width-cascading;
+         .dropdown-item {
+            padding: 0.25rem 1.5rem;
+         }
+      }
+      &.menu-cascading {
+         margin-top: -2.75rem;
+		}
+		box-shadow: none !important;
+   }
+}
+.dropdown-menu {
+	box-shadow: none !important;
+}

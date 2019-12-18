@@ -1,0 +1,299 @@
+//	================================================================================================
+//	File Name: material-variables.scss
+//	Description: Material bootstrap extedned vaiables file
+//	----------------------------------------------------------------------------------------------
+//	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+//	Version: 3.0
+//	Author: PIXINVENT
+//	Author URL: http://www.themeforest.net/user/pixinvent
+//	================================================================================================
+
+// ================================================================================================
+
+// WARNING: THIS FILE WILL GET OVERWRITTEN WITH EACH MODERN TEMPLATE RELEASE.
+
+// TIP: YOU CAN CUSTOMIZE MATERIAL BOOTSTRAP VARIABLE AS PER YOUR REQUIREMENTS, IT WILL AFFECT ONLY 
+//      FOR MATERIAL DESIGN LAYOUTS. ALWAYS KEEP BACKUP IF YOU CHANGE THIS FILE.
+
+// ================================================================================================
+
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+//
+// Color system
+//
+
+$white: #fff;
+$gray-100: #babfc7; // $gray-lightest
+$gray-200: #98a4b8; // $gray-lighter
+$gray-300: #626e82; // $gray-light
+$gray-400: #6f7274;
+$gray-500: #adb5bd;
+$gray-600: #6b6f82; // $gray
+$gray-700: #4e5154;
+$gray-800: #464855; // $gray-dark
+$gray-900: #2a2e30;
+$black: #000;
+
+
+// $blue: #1e9ff2;
+// $indigo: #6610f2;
+$purple: #673ab7; //$primary
+// $pink: #e83e8c;
+$red: #f44336; //$danger
+// $orange: #ff9149; 
+$yellow: #ffc107; //$warning
+$green: #8bc34a; //$success
+// $teal: #20c997;
+$cyan: #00bcd4; //$info
+
+
+$info: $cyan; //$info
+$danger: $red; //$danger
+$warning: $yellow; //$warning
+$success: $green; //$success
+$secondary: #607d8b; //secondary
+$primary: $purple; //$primary
+// $danger: $red;
+$light: $gray-100; // $gray-100
+$dark: $gray-800; // $gray-dakr
+
+
+// // Spacing
+// //
+// // Control the default styling of most Bootstrap elements by modifying these
+// // variables. Mostly focused on spacing.
+// // You can add more entries to the $spacers map, should you need more variation.
+
+// stylelint-disable
+$spacer: 1rem;
+$spacers: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+   (
+      0: 0,
+      1: (
+         $spacer
+      ),
+      2: (
+         $spacer * 1.5
+      ),
+      3: (
+         $spacer * 3
+      ),
+      4: (
+         $spacer * 3.5
+      ),
+      5: (
+         $spacer * 4
+      )
+   ),
+   $spacers
+);
+
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg: #F4F5FA;
+$body-color: $gray-600;
+
+// // Links
+// //
+// // Style anchor elements.
+
+// $link-color: darken($primary, 5%);
+
+
+// // Components
+// //
+// // Define common padding and border radius sizes and more.
+
+$line-height-lg: 1.25;
+$line-height-sm: 1;
+
+$border-width: 1px;
+
+$border-radius-lg: 0.35rem;
+$border-radius-sm: 0.21rem;
+
+// // Fonts
+// //
+// // Font, line-height, and color for body text, headings, and more.
+
+// // stylelint-disable value-keyword-case
+$font-family-sans-serif:      'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace:       'Quicksand', Georgia, "Times New Roman", Times, serif;
+$font-family-base:            $font-family-sans-serif;
+
+
+// // stylelint-enable value-keyword-case
+
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+
+$font-size-sm: ($font-size-base * .875);
+
+$line-height-base: 1.45;
+
+$h1-font-size: $font-size-base * 2;
+$h2-font-size: $font-size-base * 1.74;
+$h3-font-size: $font-size-base * 1.51;
+$h4-font-size: $font-size-base * 1.32;
+$h5-font-size: $font-size-base * 1.14;
+
+$headings-font-family: $font-family-monospace;
+$headings-font-weight: 400;
+
+$headings-color: $gray-800;
+
+$display1-weight: 400;
+$display2-weight: 400;
+$display3-weight: 400;
+$display4-weight: 400;
+
+$lead-font-weight: 400;
+
+
+// // Tables
+// //
+// // Customizes the `.table` component with basic values, each used across all table variations.
+
+// $table-bg: transparent;
+$table-accent-bg: rgba(245, 247, 250, 0.5);
+$table-hover-bg: rgba(245, 247, 250, 0.5);
+
+// // Buttons + Forms
+// //
+// // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+$input-btn-padding-y: .75rem;
+$input-btn-padding-x: 1rem;
+$input-btn-line-height: $line-height-lg;
+
+$input-btn-focus-box-shadow: none;
+
+$input-btn-padding-y-sm: .5rem;
+$input-btn-padding-x-sm: .75rem;
+$input-btn-line-height-sm: $line-height-sm;
+
+$input-btn-padding-y-lg: 1rem;
+$input-btn-padding-x-lg: 1.25rem;
+
+
+$input-btn-border-width: $border-width;
+
+
+// // Forms
+
+$input-border-color: $gray-100;
+$input-border-width: $input-btn-border-width;
+
+// $input-focus-border-color: $info;
+
+$input-placeholder-color: $gray-100;
+$input-height-border: $input-border-width * 2;
+
+$input-height-inner-sm: ($font-size-sm * $input-btn-line-height-sm)+($input-btn-padding-y-sm * 2);
+$input-height-sm: calc(#{$input-height-inner-sm} + #{$input-height-border});
+
+$input-group-addon-bg: $body-bg;
+
+// // Dropdowns
+// //
+// // Dropdown menu container and contents.
+
+$dropdown-link-hover-bg: $body-bg;
+
+
+// // Z-index master list
+// //
+// // Warning: Avoid customizing these values. They're used for a bird's eye view
+// // of components dependent on the z-axis and are designed to all work together.
+
+
+$nav-tabs-border-color: $gray-100;
+
+// // Navbar
+
+
+$navbar-dark-color: rgba($white, 1);
+$navbar-dark-hover-color: rgba($white, .9);
+
+$navbar-dark-disabled-color: rgba($white, .5);
+
+
+$navbar-light-color: $gray-600;
+$navbar-light-hover-color: $gray-300;
+$navbar-light-active-color: $gray-800;
+$navbar-light-disabled-color: $body-bg;
+
+$pagination-hover-bg: $body-bg;
+
+// // Cards
+
+$card-spacer-y: 1.5rem;
+$card-spacer-x: 1.5rem;
+
+$card-border-radius: $border-radius-lg;
+$card-border-color: rgba($black, 0.06);
+
+$card-cap-bg: $white;
+
+$card-columns-count: 3;
+
+// // Tooltips
+
+$tooltip-opacity: .9;
+$tooltip-margin: 0;
+
+
+// // Popovers
+
+// // Badges
+
+$badge-font-size: 85%;
+
+$badge-padding-y: .35em;
+
+// // Modals
+
+$modal-backdrop-opacity: .5;
+
+// // Alerts
+// //
+// // Define alert colors, border radius, and padding.
+
+$alert-padding-x: 1rem;
+$alert-border-level: -9;
+$alert-color-level: 6;
+
+// // Progress bars
+
+$progress-bg: #EEE;
+// // List group
+
+
+$list-group-border-color: #E4E7ED;
+
+$list-group-item-padding-y: 1.25rem;
+
+$list-group-hover-bg: $body-bg;
+
+// // Breadcrumbs
+$breadcrumb-padding-x: 0rem;
+
+// // Carousel
+$carousel-control-opacity: .5;
+
+// // Code
+$code-color: #F74B5C;
+
+$kbd-bg: lighten($gray-100, 20%);
+
+$pre-color: $gray-600;
+
+// Overwrite material variable

@@ -1,0 +1,37 @@
+// For Search Pages
+
+ul.nav.nav-inline {
+
+    li.dropdown.nav-item.float-right {
+        a.btn.dropdown-toggle {
+            box-shadow: none;
+            color: $material-color-blue-600;
+            line-height: 1;
+
+            &:hover,
+            &:focus {
+                background: transparent;
+            }
+        }
+    }
+}
+
+.my-gallery {
+    .card-deck-wrapper {
+        .card-deck .card .card-body .text-muted {
+            margin-right: 0.3125rem;
+        }
+    }
+}
+
+
+// For Search page
+
+.full-height-vh-with-nav {
+    .form-group.position-relative {
+        .form-control {
+            background: transparent;
+            border-radius: 0;
+        }
+    }
+}

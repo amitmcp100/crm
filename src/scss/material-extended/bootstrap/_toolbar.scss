@@ -1,0 +1,115 @@
+// For Toolbar
+
+.btn-toolbar {
+
+    .ft-chevron-up,
+    .ft-chevron-right,
+    .ft-chevron-down,
+    .ft-chevron-left {
+        position: relative;
+        top: 3px;
+    }
+}
+
+// Colors
+
+.tool-container.tool-top.toolbar-primary {
+    background: map-get($map: $primary, $key: color);
+
+    .tool-item:hover {
+        background: darken(map-get($map: $primary, $key: color), $amount: 20);
+    }
+
+    .arrow {
+        border-color: map-get($map: $primary, $key: color) transparent transparent;
+    }
+
+}
+
+.tool-container.tool-top.toolbar-info {
+    background: map-get($map: $info, $key: color);
+
+    .tool-item:hover {
+        background: darken(map-get($map: $info, $key: color), $amount: 20);
+    }
+
+    .arrow {
+        border-color: map-get($map: $info, $key: color) transparent transparent;
+    }
+
+}
+
+.tool-container.tool-top.toolbar-danger {
+    background: map-get($map: $danger, $key: color);
+
+    .tool-item:hover {
+        background: darken(map-get($map: $danger, $key: color), $amount: 20);
+    }
+
+    .arrow {
+        border-color: map-get($map: $danger, $key: color) transparent transparent;
+    }
+
+}
+
+.tool-container.tool-top.toolbar-warning {
+    background: map-get($map: $warning, $key: color);
+
+    .tool-item:hover {
+        background: darken(map-get($map: $warning, $key: color), $amount: 20);
+    }
+
+    .arrow {
+        border-color: map-get($map: $warning, $key: color) transparent transparent;
+    }
+
+}
+
+
+.tool-container.tool-top.toolbar-success {
+    background: map-get($map: $success, $key: color);
+
+    .tool-item:hover {
+        background: darken(map-get($map: $success, $key: color), $amount: 20);
+    }
+
+    .arrow {
+        border-color: map-get($map: $success, $key: color) transparent transparent;
+    }
+
+}
+
+
+// For Directions
+
+.tool-container.tool-right.toolbar-danger {
+    background: map-get($map: $danger, $key: color);
+
+    .tool-item:hover {
+        background: darken(map-get($map: $danger, $key: color), $amount: 20);
+    }
+
+}
+
+.tool-container.tool-bottom.toolbar-warning {
+    background: map-get($map: $warning, $key: color);
+
+    .tool-item:hover {
+        background: darken(map-get($map: $warning, $key: color), $amount: 20);
+    }
+
+}
+
+.tool-container.tool-left.toolbar-success {
+    background: map-get($map: $success, $key: color);
+
+    .tool-item:hover {
+        background: darken(map-get($map: $success, $key: color), $amount: 20);
+    }
+
+    .arrow {
+        border-color: transparent transparent transparent map-get($map: $success, $key: color);
+    }
+
+
+}

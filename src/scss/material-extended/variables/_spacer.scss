@@ -1,0 +1,16 @@
+$spacer: 1rem;
+
+$spacer-xs: ($spacer * 0.25);
+$spacer-sm: ($spacer * 0.5);
+$spacer-lg: ($spacer * 1.5);
+$spacer-xl: ($spacer * 3);
+
+$spacers: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge((0: 0,
+1: ($spacer),
+2: ($spacer * 1.5),
+3: ($spacer * 3),
+4: ($spacer * 3.5),
+5: ($spacer * 4)),
+$spacers);

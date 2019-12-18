@@ -1,0 +1,30 @@
+#toast-container > div {
+  opacity : 0.9;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  filter : alpha(opacity=90);
+}
+
+#toast-container > div:hover {
+  -webkit-box-shadow : 2px 2px 10px 0 rgba(0, 0, 0, 0.75);
+          box-shadow : 2px 2px 10px 0 rgba(0, 0, 0, 0.75);
+}
+
+.toast {
+  background-color : #673AB7;
+}
+
+.toast-success {
+  background-color : #8BC34A;
+}
+
+.toast-error {
+  background-color : #F44336;
+}
+
+.toast-info {
+  background-color : #00BCD4;
+}
+
+.toast-warning {
+  background-color : #FFC107;
+}

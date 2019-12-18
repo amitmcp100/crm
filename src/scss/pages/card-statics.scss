@@ -1,0 +1,24 @@
+// Core variables and mixins
+@import "../bootstrap/functions";
+@import "../bootstrap/mixins";
+@import "../bootstrap-extended/mixins";
+
+// Load variable overrides
+@import "../core/variables/variables";
+@import "../bootstrap/variables";
+
+@import "../core/variables/components-variables";
+
+@media only screen and (max-width: 1024px) and (min-width: 992px) {
+.grouped-stats{
+		.card-icons{
+			.media-body{
+				&.text-right{
+					span{
+						font-size: 2rem !important;
+					}
+				}
+			}
+		}
+	}
+}

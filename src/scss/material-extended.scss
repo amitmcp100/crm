@@ -1,0 +1,105 @@
+@import 'material/colors';
+@import 'material/functions';
+@import 'material/mixins';
+
+@import 'material-extended/variables';
+@import 'material/variables';
+// Base CSS
+
+// @import 'material-extended/base/base';
+// @import 'material-extended/base/grid';
+// @import 'material-extended/base/typography';
+
+// // Bootstrap components
+// // Components covered in Bootstrap's css but not in Material design
+
+@import 'material-extended/bootstrap/accordion';
+@import 'material-extended/bootstrap/alert';
+@import 'material-extended/bootstrap/badge';
+@import 'material-extended/bootstrap/base';
+@import 'material-extended/bootstrap/buttons';
+@import 'material-extended/bootstrap/breadcrumbs';
+@import 'material-extended/bootstrap/cards';
+@import 'material-extended/bootstrap/checkbox-radio';
+@import 'material-extended/bootstrap/callout';
+// @import 'material-extended/bootstrap/carousel';
+// @import 'material-extended/bootstrap/close';
+// @import 'material-extended/bootstrap/code';
+@import 'material-extended/bootstrap/dropdown';
+@import 'material-extended/bootstrap/forms';
+@import 'material-extended/bootstrap/images';
+// @import 'material-extended/bootstrap/jumbotron';
+// @import 'material-extended/bootstrap/list-group';
+@import 'material-extended/bootstrap/media';
+@import 'material-extended/bootstrap/modal';
+@import 'material-extended/bootstrap/nav-tabs';
+@import 'material-extended/bootstrap/navbar';
+@import 'material-extended/bootstrap/pagination';
+// @import 'material-extended/bootstrap/popover';
+@import 'material-extended/bootstrap/progress-bar';
+// @import 'material-extended/bootstrap/responsive-embed';
+@import 'material-extended/bootstrap/slider';
+@import 'material-extended/bootstrap/tables';
+@import 'material-extended/bootstrap/toolbar';
+// @import 'material-extended/bootstrap/transition';
+
+// Apps
+
+@import 'material-extended/apps/todo';
+@import 'material-extended/apps/project-tasks';
+@import 'material-extended/apps/chat-app';
+@import 'material-extended/apps/calendar';
+
+// Pages
+
+@import 'material-extended/pages/search-website';
+@import 'material-extended/pages/dashboard-crypto';
+@import 'material-extended/pages/dashboard-support';
+@import 'material-extended/pages/news-feed';
+@import 'material-extended/pages/social-feed';
+@import 'material-extended/pages/scrumboard';
+
+// User Interface
+@import 'material-extended/ui/animation';
+@import 'material-extended/ui/jquery-ui';
+
+
+// // Material components
+// // Components covered in Material design (https://material.google.com/components)
+
+@import 'material-extended/material/button';
+// @import 'material-extended/material/button-flat';
+// @import 'material-extended/material/button-float';
+// @import 'material-extended/material/button-group';
+// @import 'material-extended/material/card';
+// @import 'material-extended/material/chip';
+@import 'material-extended/material/data-table';
+@import 'material-extended/material/dialog';
+@import 'material-extended/material/expansion-panel';
+@import 'material-extended/material/icons';
+@import 'material-extended/material/menu';
+@import 'material-extended/material/navdrawer';
+// @import 'material-extended/material/picker';
+// @import 'material-extended/material/progress';
+// @import 'material-extended/material/progress-circular';
+@import 'material-extended/material/selection-control';
+// @import 'material-extended/material/slider';
+@import 'material-extended/material/snackbar';
+// @import 'material-extended/material/stepper';
+@import 'material-extended/material/navbar';
+@import 'material-extended/material/tab';
+@import 'material-extended/material/text-field';
+// @import 'material-extended/material/text-field-box';
+// @import 'material-extended/material/text-field-floating-label';
+// @import 'material-extended/material/text-field-input-group';
+// @import 'material-extended/material/toolbar';
+// @import 'material-extended/material/tooltip';
+@import 'material-extended/base/typography';
+
+// // Utilities
+
+// @import 'material-extended/utilities';
+
+// // Very basic print styles
+
+// @import 'material-extended/print';

@@ -1,0 +1,182 @@
+// ================================================================================================
+//  File Name: users.scss
+//  Description: Page content different types of users page layouts SCSS.
+//  ----------------------------------------------------------------------------------------------
+//  Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+//   Version: 3.0
+//  Author: PIXINVENT
+//  Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+// Core variables and mixins overrides
+@import "../bootstrap/functions";
+
+@import "../core/variables/variables";
+@import "../bootstrap/variables";
+@import "../core/variables/components-variables";
+
+.app-contacts{
+  #users-contacts {
+    .delete, .favorite {
+          i{
+              font-size: 1.25rem;
+              cursor: pointer;
+          }
+      }
+      .favorite{
+          &.active{
+              color: $warning;
+          }
+      }
+  }
+  .app-content{
+      .sidebar-toggle{
+          position: absolute;
+          cursor: pointer;
+          margin-top: 4px;
+      }
+      .content-overlay{
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          position: absolute;
+          display: block;
+          z-index: 2;
+          visibility: hidden;
+          &.show{
+              visibility: visible;
+              background-color: rgba(0, 0, 0, 0.6);
+          }
+      }
+  }
+}
+@media only screen and (max-width: 991px) {
+  .app-contacts{
+    .app-content{
+      .bug-list-search{
+        form{
+          margin-left: 3rem;
+        }
+      }
+      .sidebar-left{
+        transform: translateX(-100%);
+        transition: 300ms ease all;
+        display: none;
+        &.show{
+          display: block;
+          position: fixed;
+          top: 71px;
+          margin-left: -2.2rem;
+          width: 300px;
+          z-index: 999;
+          transform: translateX(0%);
+          height: calc(100% - 69px);
+          transition: 300ms ease all;
+          overflow-y: scroll;
+          .card{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    &.horizontal-layout{
+      .app-content{
+        .sidebar-left{
+          left: 0;
+          margin-left: 0;
+        }
+        .content-right{
+          &.show{
+            width: 100%;
+            top: 124px;
+          }
+        }
+        .content-overlay{
+          position: fixed;
+          top: 70px;
+        }
+      }
+    }
+    &.horizontal-menu-padding{
+      .app-content{
+        .content-right{
+          &.show{
+            width: 720px;
+          }
+        }
+      }
+    }
+    &.vertical-content-menu{
+      .app-content{
+        .sidebar-left.show{
+          z-index: 1000;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  .app-contacts{
+    .horizontal-layout{
+      .app-content{
+        .sidebar-left{
+          left: 0;
+          &.show{
+            margin-left: 0;
+          }
+        }
+      }
+    }
+    .app-content{
+        .sidebar-left{
+            &.show{
+                margin-left: -1rem;
+            }
+        }
+    }
+    &.vertical-layout{
+      .content-right{
+        .all-contacts{
+          div.dataTables_wrapper {
+            div.dataTables_filter#users-contacts_filter{
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  .app-contacts{
+    .delete-all {
+      position: absolute;
+      top: 50px;
+      margin-top: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width : 1200px) and (min-width: 768px) {
+  .vertical-layout{
+    .content-right{
+      .all-contacts{
+        div.dataTables_wrapper {
+          div.row:last-child{
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+.material-vertical-layout{
+  .profile-card-with-stats {
+    .btn-float {
+      padding: 8px 4px 14px !important;
+      line-height: 1.2rem;
+    }
+  }
+}

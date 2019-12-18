@@ -1,0 +1,34 @@
+.row {
+    .col-xl-8 {
+        .card {
+            .card-header {
+                .heading-elements {
+                    .btn-group.btn-group-toggle {
+                        .btn-outline-info.active {
+                            background: map-get($map: $info, $key: color);
+                            color: $white;
+                        }
+                    }
+                }
+            }
+
+            .card-body {
+                .tab-content {
+                    .tab-pane.active {
+                        .form.form-horizontal {
+                            .form-body {
+                                .form-group {
+                                    .col-md-3 {
+                                        padding-left: 1rem;
+                                        margin-left: auto;
+                                        font-size: .875rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

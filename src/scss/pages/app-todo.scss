@@ -1,0 +1,181 @@
+// Core variables and mixins
+@import "../bootstrap/functions";
+@import "../bootstrap/mixins";
+@import "../bootstrap-extended/mixins";
+
+// Load variable overrides
+@import "../core/variables/variables";
+@import "../bootstrap/variables";
+
+@import "../core/variables/components-variables";
+
+.completed {
+	.media-body{
+		text-decoration: line-through;
+	}
+}
+.todo{
+	.content-wrapper{
+		padding: 0 !important;
+	}
+	.content-header{
+		margin: 0 !important;
+	}
+	.content-overlay{
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		position: absolute;
+		display: block;
+		z-index: 2;
+		visibility: hidden;
+		&.show{
+			visibility: visible;
+			background-color: rgba(0, 0, 0, 0.6);
+		}
+	}
+
+	// Basic Search
+	.search{
+		position: relative;
+		padding: 1.5rem;
+		.basic-search{
+			width: 100%;
+			border: 1px solid $list-group-border-color;
+			padding: 1.25rem;
+			border-radius: 4px;
+		}
+		i{
+			position: absolute;
+			top: 50%;
+			right: 3rem;
+			margin-top: -0.5rem;
+		}
+	}
+	.no-result{
+		display: block !important;
+	}
+	.no-items{
+		display:none !important;
+	}
+	// Todo Form
+	.todo-form{
+		position: relative;
+		overflow: hidden;
+		.form-control-position{
+			&.control-position-right {
+				right: 18px;
+				top: 2px;
+				cursor: pointer;
+			}
+		}
+	}
+
+	// Display Todo List
+	.todo-title{
+		font-size: 1.2rem;
+		margin-bottom: 0.5rem;
+		font-weight: 500;
+		line-height: 1;
+	}
+	.todo-desc{
+		color:$gray-200;
+		font-size: 0.9rem;
+		letter-spacing: 0.35px;
+	}
+
+	// To Drag todo list item
+	.dragme {
+		position: relative;
+		left: -0.5rem;
+		top: 0.15rem;
+		cursor: move;
+		color:$gray-200;
+		margin-right: 0.5rem;
+	}
+	.todo-list{
+		height: calc(100% - 19rem);
+		position: relative;
+		&.ps-container {
+			> .ps-scrollbar-y-rail {
+				> .ps-scrollbar-y{
+					width: 5px;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.todo{
+		.app-content{
+			.sidebar-left{
+				display: none;
+				transform: translateX(-100%);
+				transition: 300ms ease all;
+				&.show{
+					display: block;
+					position: fixed;
+					top: 71px;
+					width: 300px;
+					z-index: 999;
+					transform: translateX(0%);
+					height: calc(100% - 71px);
+					transition: 300ms ease all;
+					overflow-y: scroll;
+					.card{
+						margin-bottom: 0;
+					}
+				}
+			}
+			.sidebar-todo{
+				.sidebar-todo-container{
+					overflow: scroll;
+					height: auto;
+				}
+			}
+		}
+		.search {
+			margin-left: 3.25rem;
+		}
+		.sidebar-toggle{
+			cursor: pointer;
+			position: absolute;
+			left: 2rem;
+			top: 2.5rem;
+		}
+	}
+	.horizontal-layout{
+		&.todo{
+			.sidebar-toggle{
+				left: 1.5rem;
+				top: 2.5rem;
+				position: absolute;
+			}
+			.content-overlay{
+				position: fixed;
+				top: 70px;
+			}
+		}
+		.app-content{
+			.sidebar-left{
+				left: 0;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 767px) {
+	.todo{
+		.sidebar-toggle{
+			left: 1.5rem;
+		}
+	}
+	.todo-details {
+		.todo-title {
+			.badge {
+				margin-top: 0.5rem;
+			}
+		}
+	}
+}

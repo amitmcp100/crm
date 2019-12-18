@@ -1,0 +1,4 @@
+[11-Aug-2019 15:10:08 CST6CDT] PHP Warning:  unlink(/home/loiretec/public_html/crm/demo/appoin/assets/images/services/.): Is a directory in /home/loiretec/public_html/crm/demo/appoin/assets/lib/setting_ajax.php on line 184
+[11-Aug-2019 15:10:08 CST6CDT] PHP Notice:  ob_clean(): failed to delete buffer. No buffer to delete in /home/loiretec/public_html/crm/demo/appoin/assets/lib/setting_ajax.php on line 191
+[12-Aug-2019 01:11:02 CST6CDT] PHP Warning:  unlink(/home/loiretec/public_html/crm/demo/appoin/assets/images/services/.): Is a directory in /home/loiretec/public_html/crm/demo/appoin/assets/lib/setting_ajax.php on line 184
+[12-Aug-2019 01:11:02 CST6CDT] PHP Notice:  ob_clean(): failed to delete buffer. No buffer to delete in /home/loiretec/public_html/crm/demo/appoin/assets/lib/setting_ajax.php on line 191

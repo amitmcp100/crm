@@ -1,0 +1,47 @@
+//e-commerce product shop
+.product-shop {
+
+	.pagination.pagination-round.pagination-flat li.active a,
+	.pagination.pagination-flat li.active a {
+		padding: 0.8rem 1rem;
+	}
+}
+
+.pagination {
+	background-color: transparent;
+}
+
+//datatables
+div.dataTables_wrapper {
+	div.dataTables_paginate ul.pagination {
+		margin: 0 0 0.5rem !important;
+	}
+}
+
+//search-images, search videos page
+.pagination.pagination-separate.pagination-round.pagination-flat{
+		li.active{
+			a {
+				top: 5px;
+		}
+	}
+}
+
+// For Component Pagination - Flat pagination Ex.
+
+.material-vertical-layout{
+	&.vertical-layout{
+		#basic-pagination, #curved-border-pagination, #pagination-list{
+			.pagination{
+				&.pagination-flat, &.pagination-separate.pagination-curved.pagination-flat{
+					.page-item {
+						&.active{
+							position: relative;
+							top: 3px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

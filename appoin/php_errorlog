@@ -1,0 +1,31 @@
+[11-Aug-2019 14:55:42 CST6CDT] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/loiretec/public_html/crm/demo/appoin/objects/class_connection.php on line 30
+[11-Aug-2019 14:55:42 CST6CDT] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/loiretec/public_html/crm/demo/appoin/objects/class_connection.php:30) in /home/loiretec/public_html/crm/demo/appoin/index.php on line 57
+[11-Aug-2019 14:55:42 CST6CDT] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/loiretec/public_html/crm/demo/appoin/config_index.php on line 24
+[11-Aug-2019 14:55:48 CST6CDT] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/loiretec/public_html/crm/demo/appoin/objects/class_connection.php on line 30
+[11-Aug-2019 14:55:48 CST6CDT] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/loiretec/public_html/crm/demo/appoin/objects/class_connection.php:30) in /home/loiretec/public_html/crm/demo/appoin/index.php on line 57
+[11-Aug-2019 14:55:49 CST6CDT] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/loiretec/public_html/crm/demo/appoin/config_index.php on line 24
+[11-Aug-2019 14:57:12 CST6CDT] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'loiretec_crmdemo'@'localhost' to database 'loiretec_crmdemoloiretec_crmdemo' in /home/loiretec/public_html/crm/demo/appoin/config_index.php on line 24
+[12-Aug-2019 02:02:44 CST6CDT] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/loiretec/public_html/crm/demo/appoin/index.php on line 6
+[12-Aug-2019 02:03:24 CST6CDT] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/loiretec/public_html/crm/demo/appoin/index.php on line 6
+[12-Aug-2019 02:04:02 CST6CDT] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/loiretec/public_html/crm/demo/appoin/index.php on line 6
+[12-Aug-2019 02:04:04 CST6CDT] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/loiretec/public_html/crm/demo/appoin/index.php on line 6
+[12-Aug-2019 02:04:30 CST6CDT] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/loiretec/public_html/crm/demo/appoin/index.php on line 6
+[12-Aug-2019 02:05:22 CST6CDT] PHP Fatal error:  Uncaught Error: Class 'cleanto_myvariable' not found in /home/loiretec/public_html/crm/demo/appoin/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/loiretec/public_html/crm/demo/appoin/index.php on line 11
+[12-Aug-2019 02:06:32 CST6CDT] PHP Fatal error:  Uncaught Error: Class 'cleanto_promo_code' not found in /home/loiretec/public_html/crm/demo/appoin/index.php:73
+Stack trace:
+#0 {main}
+  thrown in /home/loiretec/public_html/crm/demo/appoin/index.php on line 73
+[12-Aug-2019 02:07:48 CST6CDT] PHP Fatal error:  Uncaught Error: Class 'cleanto_myvariable' not found in /home/loiretec/public_html/crm/demo/appoin/index.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/loiretec/public_html/crm/demo/appoin/index.php on line 10
+[12-Aug-2019 02:14:29 CST6CDT] PHP Notice:  Undefined index: de_DE in /home/loiretec/public_html/crm/demo/appoin/index.php on line 851
+[12-Aug-2019 02:14:29 CST6CDT] PHP Notice:  Undefined index: es_ES in /home/loiretec/public_html/crm/demo/appoin/index.php on line 851
+[12-Aug-2019 02:14:29 CST6CDT] PHP Notice:  Undefined index: fr_FR in /home/loiretec/public_html/crm/demo/appoin/index.php on line 851
+[12-Aug-2019 02:14:29 CST6CDT] PHP Notice:  Undefined index: pt_PT in /home/loiretec/public_html/crm/demo/appoin/index.php on line 851
+[12-Aug-2019 02:14:29 CST6CDT] PHP Notice:  Undefined index: ru_RU in /home/loiretec/public_html/crm/demo/appoin/index.php on line 851
+[12-Aug-2019 02:14:29 CST6CDT] PHP Notice:  Undefined index: ar in /home/loiretec/public_html/crm/demo/appoin/index.php on line 851
+[12-Aug-2019 02:14:29 CST6CDT] PHP Notice:  Undefined index: zh_CN in /home/loiretec/public_html/crm/demo/appoin/index.php on line 851

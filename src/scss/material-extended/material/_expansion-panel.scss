@@ -1,0 +1,25 @@
+// Expansion Panels
+.card{
+    .expansion-panel {
+        &.show {
+            &:not(:first-child) {
+                margin-top: $expansion-panel-margin-y;
+            }
+            &:not(:last-child) {
+                margin-bottom: $expansion-panel-margin-y;
+            }
+        }
+    }
+}
+.floating-label{
+    &.textfield-box{        
+        .form-control{
+            padding-top: 2.5rem;
+        }
+    }
+    &.textfield-labels{
+        .form-control{
+            padding-top: 1rem;
+        }
+    }
+}

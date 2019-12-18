@@ -1,0 +1,156 @@
+/* Custom scss for page headers style */
+.breadcrumbs-right{
+	.breadcrumb{
+		float: right;
+		padding-top: 1.25rem;
+	}
+}
+
+.breadcrumb{
+	.breadcrumb-item{
+		&.active{
+			font-weight: normal;
+			color: $material-color-grey-500;
+		}
+		// Changed below css variable to direct colors
+		a {
+	    	color: $material-color-deep-purple-500;
+	     	&:hover{
+		  		color: $material-color-deep-purple-800;
+		  	}
+	  	}
+	  	+ .breadcrumb-item::before{
+	  		color: $material-color-deep-purple-800;
+	  	}
+	}
+}
+
+// For material arrow icon
+.breadcrumb-item + .breadcrumb-item {
+	margin-left: 0.3rem;
+	&:before{
+	    position: relative;
+	    content: 'chevron_right' !important;
+	    font-family: 'Material Icons';
+	    margin-right: 0.3rem;
+	    font-size: 1.2rem;
+	}
+}
+
+// Common Breadcrumbs 
+.content-header-title, .breadcrumbs-top{
+	display: inline-block;
+	.breadcrumb, ol{
+		margin-bottom: 0 !important;
+		padding-left: 0;
+	}
+}
+
+// light breadcrumb
+.material-vertical-layout, .material-horizontal-layout, .material-horizontal-layout.material-horizontal-nav{
+	.app-content {
+		.content-header{
+			.content-header-light, .content-header-dark {
+				background-color: $white;
+				box-shadow: 0px 1px 15px 1px rgba(62, 57, 107, 0.07);
+			}		
+			.content-header-left, .content-header-lead{
+				margin-bottom: 0 !important;
+				padding: 0.7rem 0 0.3rem 4rem;
+			}
+			.content-header-right{
+				.float-md-right, &.text-md-right, .media{
+					padding: 1.1rem 2rem 0.7rem;
+				}
+				.media{
+					width: 300px !important;
+				}
+				.form-group{
+					margin: 1.1rem;
+				}
+				.dropdown-toggle::after{
+					right: -10px;
+				}
+			}
+			.content-header-title{
+				border-right: 1px solid #E4E5EC;
+				padding: 0.4rem 1.2rem 0.4rem 0;
+				margin-right: 1rem;
+			}
+		}	
+	}
+}
+
+// For material-horizontal template
+.material-horizontal-layout {
+	.app-content {
+		.content-header {
+			.content-header-left{
+				padding-left: 2rem;
+			}
+		}
+	}
+}
+
+// Form Group
+@media only screen and (max-width: 600px) {
+	.material-vertical-layout, .material-horizontal-layout{
+		.app-content {
+			.content-header-right{
+				.form-group{
+					padding-left: 3.5rem !important;
+				}
+			}
+		}
+	}
+}
+
+// dark breadcrumb
+ .material-vertical-layout, .material-horizontal-layout{
+	.app-content{
+		.content-header{
+			> .breadcrumb-wrapper{
+				padding: 1rem 0 0 4rem;
+				.breadcrumb{
+					margin-bottom: 0;
+					padding-bottom: 0;
+				}
+			}
+			.content-header-dark{
+				.breadcrumb-item{
+					&.active{
+						color: white;
+						font-weight: 300;
+					}
+					a{
+				    	color: lighten($material-color-deep-purple-500, 30);
+				     	&:hover{
+					  		color: lighten($material-color-deep-purple-800, 45);
+					  	}
+				  	}
+				}
+				.breadcrumb-item + .breadcrumb-item::before{
+					color: lighten($material-color-deep-purple-500, 30);
+				}
+				&.bg-img{
+					background-image: url('../../app-assets/images/backgrounds/breadcrumb.png');
+					background-size: 100% 100%;
+					width: 100%;
+				}
+				.content-header-left, .content-header-right{
+					background-color: rgba(0, 0, 0, 0.7);
+				}			
+			}
+		}
+	}
+}
+.horizontal-menu-padding{
+	&.material-horizontal-layout{
+		.app-content{
+			.content-header{
+				margin: 0;
+				margin-bottom: 2rem;
+			}
+		}
+	}
+}

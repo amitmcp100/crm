@@ -1,0 +1,84 @@
+.material-vertical-layout {
+    .main-menu{
+        .user-profile {
+            background-size: cover;
+            .user-info {
+                .user-img {
+                    border: 3px solid $white;
+                    width: 60px;
+                    margin-bottom: 0.5rem;
+                }
+                .dropdown-toggle:after {
+                    position: relative;
+                    top: -1px;
+                }
+                .dropdown-menu {
+                    &.arrow {
+                        margin-top: 0.5rem;
+                    }
+                    &:before {
+                        background: transparent;
+                    }
+                    .dropdown-item {
+                        .material-icons {
+                            font-size: 1.2rem;
+                        }
+                        span.align-middle {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+        .main-menu-content {
+            .navigation {
+                li.active>a {
+                    background: $primary;
+                    color: $white;
+                }
+            }
+        }
+        &.menu-light {
+            border-right: 0;
+            .user-profile {
+                background: url('../../../../../app-assets/images/gallery/left-menu-bg.jpg') center center no-repeat;
+            }
+        }
+        &.menu-dark {
+            .user-profile {
+                background: url('../../../../../app-assets/images/gallery/dark-menu.jpg') center center no-repeat;
+                .user-info {
+                    background-color: rgba($color: $black, $alpha: .35);
+                    .dropdown-menu {
+                        .dropdown-item {
+                            .material-icons,span.align-middle {
+                                color: $gray-600;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.vertical-compact-menu{
+        .main-menu{
+            &.menu-light {
+                border-right: 1px solid $list-group-border-color;
+            }
+        }
+    }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .material-vertical-layout,.material-horizontal-layout {
+        .form-control{
+            padding: 0.75rem;
+            min-height: 40px;
+        }
+        .has-icon-left{
+            .form-control{
+                padding: 0.75rem 2rem;
+                min-height: 40px;
+            }
+        }
+    }
+}

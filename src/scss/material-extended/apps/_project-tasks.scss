@@ -1,0 +1,21 @@
+// Project Summary
+
+.project-search-content{
+    .form-control{
+        border: none;
+        border-bottom: 1px solid $border-color;
+    }
+}
+
+// Project Tasks
+.table {
+
+    .odd,
+    .even {
+        td {
+            a:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}

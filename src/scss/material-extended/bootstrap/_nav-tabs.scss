@@ -1,0 +1,137 @@
+// For Nav Tabs
+.nav-tabs {
+    // box-shadow: none;
+    margin-bottom: 1rem !important;
+}
+
+.nav-top-border .nav-link.active,
+.nav-topline .nav-link.active {
+    border: 1px solid $border-color;
+    border-bottom: none;
+
+    &::before {
+        display: none;
+    }
+}
+
+.no-hover-bg .nav-link:hover {
+    background: transparent;
+}
+
+.nav-linetriangle .nav-item a.nav-link.active:before {
+    background: transparent;
+}
+
+.card .card-body {
+    .nav.nav-tabs.nav-iconfall .nav-item {
+        background: $white;
+        margin: 0;
+
+        .nav-link::before {
+            display: none;
+        }
+    }
+
+    .nav.nav-tabs.nav-iconfall .nav-item:hover,
+    .nav.nav-tabs.nav-iconfall .nav-item:focus {
+        background: $white;
+    }
+
+    // For Dropdown Icons
+
+    .nav.nav-tabs .nav-item .nav-link.dropdown-toggle::after {
+        position: relative;
+        top: 7px;
+    }
+
+    // For Box shadow
+    .nav.nav-tabs.nav-justified {
+        box-shadow: none;
+    }
+}
+
+// For Navtabs drag
+
+#tabs-icon-drag {
+    .nav-link.dropdown-toggle::after {
+        top: 0;
+    }
+}
+
+.nav-vertical {
+    .nav-tabs .nav-link.active::before {
+        opacity: 0;
+    }
+}
+
+
+.nav.nav-tabs .nav-item .nav-link {
+    padding: $nav-tab-link-padding-y $nav-tab-link-padding-x;
+}
+
+
+
+.card .card-content .card-body {
+
+    .nav.nav-tabs.nav-topline .nav-item .nav-link.dropdown-toggle::after,
+    .nav.nav-tabs.nav-justified .nav-item .nav-link.dropdown-toggle::after,
+    .nav.nav-tabs.nav-underline .nav-item .nav-link.dropdown-toggle::after,
+    .nav.nav-tabs.nav-linetriangle .nav-item .nav-link.dropdown-toggle::after,
+    .nav.nav-tabs.iconfall .nav-item.dropdown .nav-link.dropdown-toggle::after {
+        position: relative;
+        top: -1px;
+
+    }
+}
+
+
+
+// For Pill Components
+
+.nav-pills .nav-item .nav-link.active {
+    color: $white;
+    background: map-get($map: $info, $key: color);
+}
+
+// For Shopping-cart
+
+.shopping-cart {
+    .nav-tabs {
+        box-shadow: none;
+
+        .nav-item {
+            margin: 0 1rem 0.75rem !important;
+        }
+
+        .nav-link.active {
+            height: 100% !important;
+        }
+
+        .nav-link:before {
+            background-color: transparent;
+        }
+    }
+}
+
+// For Label/Badges
+
+#navs-labels-pills {
+    .card {
+        .card-body {
+            .badge {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+
+
+#tabs-with-labels-pills {
+    .card {
+        .card-body {
+            .badge {
+                font-size: 0.6rem;
+            }
+        }
+    }
+}

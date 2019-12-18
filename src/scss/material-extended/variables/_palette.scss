@@ -1,0 +1,51 @@
+// Theme palette
+// Change these values to customise colour palettes
+@import '../../core/variables/_material-variables';
+
+$primary: (color: $primary,
+dark: $primary,
+light: $primary);
+
+$secondary: (color: $secondary,
+dark: $secondary,
+light: $secondary);
+
+$danger: (color: $danger,
+dark: $danger,
+light: $danger);
+
+$info: (color: $info,
+dark: $info,
+light: $info);
+
+$success: (color: $success,
+dark: $success,
+light: $success);
+
+$warning: (color: $warning,
+dark: $warning,
+light: $warning);
+
+$dark: (color: $dark,
+dark: $dark,
+light: $dark);
+
+$light: (color: $light,
+dark: $light,
+light: $light);
+
+$theme-colors: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge((primary: $primary,
+secondary: $secondary,
+danger: $danger,
+info: $info,
+success: $success,
+warning: $warning,
+dark: $dark,
+light: $light),
+$theme-colors);
+
+$yiq-contrasted-threshold: 150;
+$yiq-text-dark: $black-primary;
+$yiq-text-light: $white-primary;

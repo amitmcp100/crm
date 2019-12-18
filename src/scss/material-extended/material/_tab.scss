@@ -1,0 +1,13 @@
+// For Nav Tabs
+
+.material-fixed-tabs {
+	.nav {
+		&.nav-tabs {
+			&.nav-justified {
+				.nav-link {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,88 @@
+// For List Group Item
+
+.media-list {
+    .list-group-item {
+
+        &:hover {
+            background: map-get($map: $info, $key: color);
+
+            a,
+            .list-group-item-heading,
+            .list-group-item-text {
+                color: $white;
+            }
+        }
+
+        .media-link {
+            &:hover {
+                text-decoration: none;
+                color: $white;
+
+                text-decoration: none;
+            }
+        }
+
+        .media-left {
+            float: left;
+            padding-right: 1rem;
+        }
+
+        .media-right {
+            float: right;
+            padding-left: 1rem;
+        }
+    }
+}
+
+// For Media Objects
+
+.media-list .media {
+    padding: 1.5rem;
+
+    .media-left {
+        float: left;
+        padding-right: 1rem;
+    }
+
+    .media-right {
+        float: right;
+        padding-left: 1rem;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .media-notation {
+        a {
+            margin-right: 0.5rem;
+        }
+    }
+}
+
+// For Labeled Icons
+
+.media {
+    .btn-icon {
+        min-width: 0;
+    }
+}
+
+// For Bordered Media
+
+.media-bordered .media {
+    border-top: 1px solid $border-color;
+
+    &:first-child {
+        border-top: none;
+    }
+}
+
+// For active item
+
+.media-list,
+.list-group {
+    .list-group-item.active {
+        background: map-get($map: $info, $key: color);
+    }
+}

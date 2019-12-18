@@ -1,0 +1,24 @@
+// For Chat App
+
+.chat-app-form .chat-app-input .form-group {
+    .form-control {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid $border-color;
+        padding-left: 2.5rem;
+    }
+
+    .icon-emoticon-smile,
+    .ft-image {
+        font-size: 1.7rem;
+    }
+}
+
+//For Contact App
+.all-contacts{
+    .dataTables_wrapper{
+        label{
+            margin-bottom: 0.5rem;
+        }
+    }
+}

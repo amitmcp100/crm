@@ -1,0 +1,22 @@
+.fc-right,
+.fc-left {
+
+    .fc-button,
+    .fc-state-default.fc-corner-left,
+    .fc-state-default.fc-corner-right {
+        border-radius: $border-radius;
+    }
+
+    .fc-button-group {
+
+        .fc-button,
+        .fc-state-default.fc-corner-left,
+        .fc-state-default.fc-corner-right {
+            border-radius: 0;
+        }
+    }
+}
+
+.fc-event {
+    border-radius: $border-radius;
+}

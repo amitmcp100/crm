@@ -1,0 +1,19 @@
+// For Social Feed on Ipad Pro
+
+@media screen and (width: 1024px) {
+    .card {
+        .card-body {
+            .spotify-playlist {
+                .row.mt-2 {
+                    .col-3.p-0 {
+                        p {
+                            position: relative;
+                            top: -1.2rem;
+                            left: 8.25rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

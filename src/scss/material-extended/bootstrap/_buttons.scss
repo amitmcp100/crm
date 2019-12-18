@@ -1,0 +1,181 @@
+// For Btn Text Color
+
+.btn-success,
+.btn-warning,
+.waves-button-input {
+    color: $white;
+}
+
+// For Btn Focus
+
+.btn {
+    &:focus {
+        color: $white;
+    }
+}
+
+// For Btn Link
+
+.btn-link {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+// For Text Color of Btn Light 
+
+.btn-light,
+.btn-outline-light {
+    color: $black !important;
+
+    &:hover {
+        color: $black;
+    }
+}
+
+// For Social Btns
+
+.form-group,
+.card-body {
+    .btn.btn-social {
+        padding: 0.8rem 1.5rem 0.8rem 3.75rem;
+
+        &.width-200 {
+            width: auto;
+        }
+
+        &.btn-lg.btn-yahoo,
+        &.btn-lg.btn-vimeo,
+        &.btn-lg.btn-pinterest,
+        &.btn-lg.btn-outline-yahoo,
+        &.btn-lg.btn-outline-vimeo,
+        &.btn-lg.btn-outline-pinterest {
+            .la {
+                line-height: 2.7rem;
+            }
+        }
+
+        &.btn-lg.btn-soundcloud,
+        &.btn-lg.btn-outline-soundcloud {
+            .la {
+                line-height: 3.7;
+            }
+        }
+
+        &.btn-sm.btn-yahoo,
+        &.btn-sm.btn-vimeo,
+        &.btn-sm.btn-pinterest,
+        &.btn-sm.btn-outline-yahoo,
+        &.btn-sm.btn-outline-vimeo,
+        &.btn-sm.btn-outline-pinterest {
+            .la {
+                line-height: 2.5rem;
+            }
+        }
+    }
+}
+
+// For Font Size Of Icon 
+
+.btn {
+    .la-check-square-o {
+        font-size: 1rem;
+    }
+}
+
+// For Bg Of Default btn
+
+.btn-default {
+    background: map-get($map: $light, $key: dark);
+}
+
+// For Line Height of Profile Cards
+
+.profile-card-with-cover-content {
+
+    .btn-social> :first-child,
+    .btn-social-icon> :first-child {
+        line-height: 2.4rem;
+    }
+}
+
+// For Line Height Of Social Buttons
+
+.card {
+    .card-header {
+        .heading-elements {
+            .social-buttons {
+                .btn-social-icon> :first-child {
+                    line-height: 2.7rem;
+                }
+            }
+        }
+    }
+}
+
+// For Outline Info Btn in Crypto Dashboard
+
+.btn-group.btn-group-toggle {
+    .btn-outline-info.active {
+        background: map-get($map: $info, $key: color);
+        color: $white;
+    }
+}
+
+// For Jquery UI Buttons and dialogs
+
+.disable-escape-dialog-btn {
+    font-size: 1rem !important;
+}
+
+.btn-group {
+    background: transparent;
+}
+
+
+
+// For Opacity Of Outline Buttons
+
+.btn-group>.btn[class*='btn-outline'],
+.btn-group-vertical>.btn[class*='btn-outline'] {
+    opacity: 1;
+}
+
+// For btn in Data Tables
+
+@media screen and(max-width: 540px) {
+    .dataTables_wrapper {
+        .dt-buttons.btn-group {
+            .btn {
+                margin: 0 !important;
+            }
+        }
+    }
+}
+
+//btn-flat font-color on focus
+@each $color,
+$values in $theme-colors {
+    .btn-flat-#{$color} {
+        @include plain-active-focus-hover {
+            color: theme-color($color);
+        }
+    }
+}
+
+// For Bank Dashboard
+.bank-cards {
+    .add-card {
+        .btn {
+            margin-bottom: 0.7rem;
+        }
+    }
+}
+
+// For Support menu - FAQ
+
+.faq {
+    .btn.btn-link:focus {
+        color: $link-color-hover;
+    }
+}

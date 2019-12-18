@@ -1,0 +1,40 @@
+// For Material Input
+
+.floating-label {
+	label{
+		margin-left: 0 !important;
+	}
+	input{
+		padding-left: 0;
+	}
+	.form-control {
+		background-color: transparent;
+	}
+
+	&.textfield-box {
+		.form-control {
+			background-color: $textfield-box-bg;
+		}
+
+		textarea {
+			&.form-control:not([rows='1']) {
+				padding-top: 1rem;
+			}
+		}
+	}
+}
+
+// Floating - Label - Sm
+.floating-label-sm, .floating-label-lg{
+	label{
+		// margin-left: 0;
+	}
+}
+
+#text-field-icons{
+	.form-group{
+		select.form-control{
+			border: 1px solid rgba(0, 0, 0, 0.3);
+		}
+	}
+}

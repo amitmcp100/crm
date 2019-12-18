@@ -1,0 +1,22 @@
+// Material Dialogs
+
+.material-dialogs {
+
+	.modal,
+	.modal-show {
+		.modal-footer {
+			.btn {
+				border: none;
+			}
+		}
+	}
+}
+
+.modal-show {
+	&.modal {
+		display: block;
+		padding-right: 1.1rem;
+		position: relative;
+		z-index: 998;
+	}
+}
