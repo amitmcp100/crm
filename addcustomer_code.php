@@ -74,11 +74,11 @@ if($c_id){
   else{
 
 	
-	$query23="INSERT INTO `tbl_customer_data` (`id`, `store_id` `mobile`, `name`, `email`, `anniversary`, `dob`,`employee`,`amount`, `customer_group`, `comment`, `reminder`, `store`, `userid`, `address`, `c_source`,`c_date`) VALUES (NULL, '$store_id','$mobile', '$name', '$email', '$anniversary', '$dob','$employee','$amount', '$c_group', '$comment', '$reminder', '$store', '$userid', '$address','$c_source','$create_date')";
+	$query23="INSERT INTO `tbl_customer_data` (`id`, `store_id`, `mobile`, `name`, `email`, `anniversary`, `dob`,`employee`,`amount`, `customer_group`, `comment`, `reminder`, `store`, `userid`, `address`, `c_source`,`c_date`) VALUES (NULL, '$store_id','$mobile', '$name', '$email', '$anniversary', '$dob','$employee','$amount', '$c_group', '$comment', '$reminder', '$store', '$userid', '$address','$c_source','$create_date')";
 	$stmt = $DB->prepare($query23);
 	$stmt->execute();
 
-	$query37="INSERT INTO `tbl_sales_report` (`id`, `store_id` `name`,`employee`,`services`,`product`,`mobile`, `amount`, `payment_mode`, `sales_date`) VALUES (NULL, '$store_id', '$name','$employee','$service','$product','$mobile', '$amount','$paymentmode', '$create_date')";
+	$query37="INSERT INTO `tbl_sales_report` (`id`, `store_id`, `name`,`employee`,`services`,`product`,`mobile`, `amount`, `payment_mode`, `sales_date`) VALUES (NULL, '$store_id', '$name','$employee','$service','$product','$mobile', '$amount','$paymentmode', '$create_date')";
 	$stmt = $DB->prepare($query37);
 	$stmt->execute();
 

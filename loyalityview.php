@@ -98,7 +98,7 @@ include 'header.php';
                                                     // Check connection
                                                     
                                                     $usid=$_SESSION["user_id"];
-                                                    $sql1 = "SELECT tbl_customer_data.name,tbl_customer_data.email,tbl_customer_data.id,tbl_customer_purchase.amount,tbl_loyality.available_points,tbl_loyality.used_points FROM ((tbl_customer_data INNER JOIN tbl_customer_purchase ON tbl_customer_data.id = tbl_customer_purchase.c_id) INNER JOIN tbl_loyality ON tbl_customer_purchase.c_id=tbl_loyality.c_id)";
+                                                    $sql1 = "SELECT tbl_customer_data.name,tbl_customer_data.email,tbl_customer_data.id,tbl_customer_purchase.amount,tbl_loyality.available_points,tbl_loyality.used_points FROM ((tbl_customer_data INNER JOIN tbl_customer_purchase ON tbl_customer_data.id = tbl_customer_purchase.c_id AND tbl_customer_purchase.store_id = '$store_id' ) INNER JOIN tbl_loyality ON tbl_customer_purchase.c_id=tbl_loyality.c_id AND tbl_loyality.store_id= '$store_id')";
 
                                                     //echo $sql1;
                                                     $stmt = $DB->prepare($sql1);
