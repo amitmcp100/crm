@@ -1,10 +1,10 @@
 <?php
 require_once("config.php");
 
-// if (isset($_SESSION["user_id"]) && $_SESSION["user_id"] != "") {
-//     // if logged in send to dashboard page
-//     redirect("retailers.php");
-// }
+if (isset($_SESSION["user_id"]) && $_SESSION["user_id"] != "") {
+    // if logged in send to dashboard page
+    redirect("retailers.php");
+}
 $title = "Register";
 ?>
 <!DOCTYPE html>
@@ -96,10 +96,14 @@ $title = "Register";
                                     </div>
                                    
                                 </div>
-                                 <?php if ($ERROR_MSG <> "") { ?>
-                                <div class="alert alert-warning mb-2" role="alert">
-                                            <strong>Warning!</strong> <?php echo $ERROR_MSG ?>
-                                        </div><?php } ?>
+                                <!-- Warning message  -->
+                                    <?php if ($ERROR_MSG <> "") { ?>
+                                    <div class="alert alert-warning mb-2" role="alert">
+                                    <strong>Success!</strong> <?php echo $ERROR_MSG ?>
+                                    </div>
+                                    <?php }  ?>
+                            
+               
                                 <div class="card-content">
                                     
                                    

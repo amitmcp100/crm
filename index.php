@@ -129,11 +129,17 @@ if ($mode == "login") {
                                     </div>
                                    
                                 </div>
-                                 <?php if ($ERROR_MSG <> "") { ?>
-                                <div class="alert alert-warning mb-2" role="alert">
-                                            <strong>Warning!</strong> <?php echo $ERROR_MSG ?>.
-                                             
+                                        <!--  for warnings messages -->
+                                        <?php if ($ERROR_MSG <> "" && $ERROR_TYPE == 'danger') { ?>
+                                        <div class="alert alert-warning mb-2" role="alert">
+                                        <strong>Warning!</strong> <?php echo $ERROR_MSG ?>.
                                         </div><?php } ?>
+                                        <!-- for success messages -->
+                                        <?php if ($ERROR_MSG <> "" && $ERROR_TYPE == 'success') { ?>
+                                        <div class="alert alert-success mb-2" role="alert">
+                                        <strong>Warning!</strong> <?php echo $ERROR_MSG ?>.
+                                        </div><?php } ?>
+
                                 <div class="card-content">
                                      
                                    
