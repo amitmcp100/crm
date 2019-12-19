@@ -186,7 +186,8 @@
                                
                                 while ($ann1 = $stmt->fetch()) { 
 						
-								$c_name1=$ann1['name'];
+                                $c_name1=$ann1['name'];
+                                
 								$c_mobile1=$ann1['mobile'];
 								?>
                                 <li class="scrollable-container media-list w-100"><a href="javascript:void(0)">

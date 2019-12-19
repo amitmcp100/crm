@@ -194,7 +194,7 @@ while ($row31 = $stmt->fetch()) {
                   <?php
 
                     $sql57 = "SELECT `service_name`  FROM `tbl_services` where  `store_id` = '$store_id'";
-                    //echo $sql31;
+                    //echo $sql57;
                     $stmt = $DB->prepare($sql57);
                     $stmt->execute();
                     $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -203,6 +203,10 @@ while ($row31 = $stmt->fetch()) {
                         $service_name[]= $row57['service_name'];
 
                     }
+                    if($service_name =='')
+                    {
+
+                    }else{
                     foreach($service_name as $ser)
                     {
 
@@ -245,7 +249,7 @@ while ($row31 = $stmt->fetch()) {
                         </div>
                     </div>
 
-                 <?php } } }?>
+                 <?php } } } }?>
                     <style>
                          .scrollable{
                              height:400px;
@@ -357,6 +361,10 @@ while ($row31 = $stmt->fetch()) {
                                                         $product_name[]= $row57['product_name'];
                                 
                                                     }
+                                                    if($product_name =='')
+                                                    {
+
+                                                    }else{
                                                     foreach($product_name as $pro)
                                                     {
 												    
@@ -385,6 +393,7 @@ while ($row31 = $stmt->fetch()) {
                                                       }
                                                      }   
                                                     }
+                                                }
                                                     
 													?>
                                         <tbody> 
