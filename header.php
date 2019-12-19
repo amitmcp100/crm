@@ -16,7 +16,7 @@
                 //     $reg_id=$row01['reguser_id'];
                 //     }
                 // // Attempt select query execution
-                $sql = "SELECT *  FROM `tbl_user_data` WHERE `id` = '$userid'";
+                $sql = "SELECT *  FROM `tbl_user_data` WHERE `id` = '$userid' AND `store_id`= '$store_id'";
                 $stmt = $DB->prepare($sql);
                 $stmt->execute();
                 $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -128,7 +128,7 @@
                         //include("configinc2.php"); 
                         $cu_date=date("m-d");
 						//Birthday
-						$sqlbirthday = "SELECT count(id) as bid FROM `tbl_customer_data` WHERE `dob` LIKE '%$cu_date%'";
+						$sqlbirthday = "SELECT count(id) as bid FROM `tbl_customer_data` WHERE `dob` LIKE '%$cu_date%' AND `store_id`= '$store_id'";
                         $stmt = $DB->prepare($sqlbirthday);
                         $stmt->execute();
                         $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -140,7 +140,7 @@
 						
 
 						//anniversary
-						$sqlann = "SELECT count(id) as aid FROM `tbl_customer_data` WHERE `anniversary` LIKE '%$cu_date%'";
+						$sqlann = "SELECT count(id) as aid FROM `tbl_customer_data` WHERE `anniversary` LIKE '%$cu_date%' AND `store_id`= '$store_id'";
                         $stmt = $DB->prepare($sqlann);
                         $stmt->execute();
                         $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -179,7 +179,7 @@
                                     </a></li>
                                 <?php } ?>
                                  <?php 
-								$sqlann1 = "SELECT * FROM `tbl_customer_data` WHERE `anniversary` LIKE '%$cu_date%'";
+								$sqlann1 = "SELECT * FROM `tbl_customer_data` WHERE `anniversary` LIKE '%$cu_date%' AND `store_id`= '$store_id'";
                                 $stmt = $DB->prepare($sqlann1);
                                 $stmt->execute();
                                 $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -206,7 +206,7 @@
                             </ul>
                         </li>
                         <?php
-                        $sqlfee = "SELECT count(id) as fid FROM `tbl_feedback` WHERE `read` = 'no'";
+                        $sqlfee = "SELECT count(id) as fid FROM `tbl_feedback` WHERE `read` = 'no' AND `store_id`= '$store_id'";
                         $stmt = $DB->prepare($sqlfee);
                         $stmt->execute();
                         $stmt->setFetchMode(PDO::FETCH_ASSOC);

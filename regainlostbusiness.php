@@ -95,7 +95,7 @@ include 'header.php';
                                                     server with default setting (user 'root' with no password) */
                                                     
                                                     $sql11 = "SELECT *  FROM `tbl_regain` where `store_id` = '$store_id'";
-                                                    //echo $sql;
+                                                    //echo $sql11;
                                                     $stmt = $DB->prepare($sql11);
                                                     $stmt->execute();
                                                     $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -107,7 +107,7 @@ include 'header.php';
                                                     $fetch_time=$reminder." ".$duration;
                                                     }
 
-                                                    //echo $fetch_time;
+                                                    
                                                     
                                                     $sql1 = "SELECT *  FROM `tbl_customer_data` WHERE `c_date` >=DATE_ADD(CURDATE(),INTERVAL -$fetch_time)  AND `store_id` = '$store_id'";
                                                     

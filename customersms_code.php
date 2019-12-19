@@ -3,11 +3,12 @@
 include("config.php");
 //$con = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
 // Check connection
-print_r($_POST);
+//print_r($_POST);die;
 
 if(isset($_POST['submit']))
 {
 // Posted Values
+$store_id = $_SESSION['store_id'];
 $id=$_POST['id'];
 $userid=$_POST['user'];
 $store=$_POST['store'];
@@ -15,7 +16,7 @@ $sms_text=$_POST['sms_text'];
 $c_mobile=$_POST['c_mobile'];
 $create_date=date("Y-m-d");
 
-$sql1 = "SELECT *  FROM `creditsms` WHERE `store` = '$store'";
+$sql1 = "SELECT *  FROM `creditsms` WHERE `store_id` = '$store_id'";
 $stmt = $DB->prepare($sql1);
 $stmt->execute();
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -25,7 +26,7 @@ $used_sms=$row1['used_sms'];
 
 }
 
-$sql2 = "SELECT *  FROM `tbl_user_group` WHERE `child_id` = '$userid'";
+$sql2 = "SELECT *  FROM `tbl_user_group` WHERE `store_id` = '$store_id' AND `parent_id` = '0'";
 $stmt = $DB->prepare($sql2);
 $stmt->execute();
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -34,8 +35,7 @@ while ($row2 = $stmt->fetch()) {
 $sender_id=$row2['sender_id'];
 
 }
-
-
+//$sender_id='AKSHAY';
 if($available_sms>'1'){
 	$curl = curl_init();
 
@@ -56,6 +56,7 @@ curl_setopt_array($curl, array(
 ));
 
 $response = curl_exec($curl);
+//print_r($respomse);die;
 if($response=='sms sent successfully'){
 	$update_sms=$available_sms-1;
 	$u_sms=$used_sms+1;
