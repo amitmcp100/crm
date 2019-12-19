@@ -25,7 +25,7 @@ $create_date=date("Y-m-d");
 if($username == ""  ||  $email == ""  ||  $contact == "" || $firstname == ""){
 $_SESSION["errorType"] = "danger";
 $_SESSION["errorMsg"] = "All fields are mandatory";
-header('Location: register.php');
+header('Location: register.php?data=error');
  exit;
 }
 // $sql = "SELECT *  FROM `tbl_user_group` WHERE `child_id` = '$userid' and `store_id` = '$store_id'";
