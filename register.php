@@ -5,55 +5,7 @@ require_once("config.php");
 //     // if logged in send to dashboard page
 //     redirect("retailers.php");
 // }
-
-$title = "Login";
-$mode = $_REQUEST["mode"];
-if ($mode == "login") {
-    $username = trim($_POST['username']);
-    $pass = trim($_POST['user_password']);
-
-    if ($username == "" || $pass == "") {
-
-        $_SESSION["errorType"] = "danger";
-        $_SESSION["errorMsg"] = "Enter manadatory fields";
-    } else {
-        $sql = "SELECT * FROM system_users WHERE u_username = :uname AND u_password = :upass ";
-
-        try {
-            $stmt = $DB->prepare($sql);
-
-            // bind the values
-            $stmt->bindValue(":uname", $username);
-            $stmt->bindValue(":upass", $pass);
-
-            // execute Query
-            $stmt->execute();
-            $results = $stmt->fetchAll();
-
-            if (count($results) > 0) {
-                $_SESSION["errorType"] = "success";
-                $_SESSION["errorMsg"] = "You have successfully logged in.";
-
-                $_SESSION["user_id"] = $results[0]["u_userid"];
-                $_SESSION["rolecode"] = $results[0]["u_rolecode"];
-                $_SESSION["username"] = $results[0]["u_username"];
-                $_SESSION["store_id"] = $results[0]["store_id"];
-
-                redirect("retailers.php");
-                exit;
-            } else {
-                $_SESSION["errorType"] = "info";
-                $_SESSION["errorMsg"] = "username or password does not exist.";
-            }
-        } catch (Exception $ex) {
-
-            $_SESSION["errorType"] = "danger";
-            $_SESSION["errorMsg"] = $ex->getMessage();
-        }
-    }
-    redirect("index.php");
-}
-
+$title = "Register";
 ?>
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
@@ -65,7 +17,7 @@ if ($mode == "login") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="description" content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
     <meta name="keywords" content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
-    <meta name="author" content="PIXINVENT">
+    <meta name="author" content= "PIXINVENT">
     <title>Login with Background Image - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin Dashboard</title>
     <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
     <link rel="icon" href="https://www.loiretechnologies.com/wp-content/uploads/2019/05/logo-fav.png" sizes="32x32" />
@@ -117,6 +69,22 @@ if ($mode == "login") {
     background-size: cover;
     font-weight: unset;
     text-shadow: 1px 1px 5px #19718a;padding-left:0px !important;">
+<style type="text/css">
+    /* Response */
+.response{
+    padding: 6px;
+    display: none;
+}
+
+.not-exists{
+    color: red; 
+}
+
+.exists{
+    color: green;
+}
+</style>
+
        <img src="login_bg.jpg" style="width: 90%;">
         </div>
         <div class="col-md-4" style="margin-left:-28px;">
@@ -139,10 +107,11 @@ if ($mode == "login") {
                                         <form class="form-horizontal" method="post" action="register_code.php" novalidate>
                                          <input type="hidden" name="mode" value="login" >
                                             <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="text" class="form-control" id="user-name" placeholder="Your Username" name="username" value="" required>
+                                                <input type="text" class="form-control" id="username" placeholder="Your Username" name="username" value="" required>
                                                 <div class="form-control-position">
                                                     <i class="ft-user"></i>
                                                 </div>
+                                                 <div id="uname_response" class="response"></div>
                                             </fieldset>
 
                                             <fieldset class="form-group position-relative has-icon-left">
@@ -166,23 +135,17 @@ if ($mode == "login") {
                                             </fieldset>
 
                                             <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="password" class="form-control" id="user-password" placeholder="Enter Password" name="user_password" required="">
+                                            <input type="password" class="form-control" id="user-password" placeholder="Provide Password" name="user_password" required="">
                                                 <div class="form-control-position">
                                                     <i class="la la-key"></i>
                                                 </div>
                                             </fieldset>
 
-                                             <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="password" class="form-control" id="con_password" placeholder="Confirm Password" name="con_password" required="">
-                                                <div class="form-control-position">
-                                                    <i class="la la-key"></i>
-                                                </div>
-                                            </fieldset>
                                             <div class="form-group row">
                                             <div class="col-sm-6 col-12 float-sm-left text-center text-sm-left"><a href="register.php" class="card-link">Forgot Password?</a></div>
                                                 <div class="col-sm-6 col-12 float-sm-left text-center text-sm-right"><a href="index.php" class="card-link">Login</a></div>
                                             </div>
-                                            <button type="submit" class="btn btn-outline-info btn-block" name="submit" value="Submit"><i class="ft-unlock"></i>Register</button>
+                                            <button disabled id="submit" type="submit" class="btn btn-outline-info btn-block" name="submit" value="Submit"><i class="ft-unlock"></i>Register</button>
                                         </form>
                                     </div>
                                     
@@ -194,7 +157,45 @@ if ($mode == "login") {
        
    </div>
    </div>
+ <script src="app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+  
 </body>
 <!-- END: Body-->
-
 </html>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+       $("#uname_response").hide();
+        $("#username").keyup(function(){
+           //a alert('helll');
+            var uname = $("#username").val().trim();
+            if(uname != ''){
+                $("#uname_response").show();
+
+                $.ajax({
+                    url: 'uname_check.php',
+                    type: 'post',
+                    data: {uname:uname},
+                    success: function(response){
+                      ///console.log(response);
+
+                        if(response > 0) {
+                              
+                            $("#uname_response").html("<span class='not-exists'>* Username Already in use.</span>");
+                            $("#submit").prop('disabled' ,  true);
+                        } else {
+                            $("#uname_response").html("<span class='exists'>Available</span>");
+                            $("#submit").prop('disabled', false);
+                        }
+                    }
+                });
+
+            } else {
+               $("#uname_response").hide();
+            }
+        });
+    });
+
+</script>

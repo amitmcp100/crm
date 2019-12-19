@@ -498,7 +498,7 @@ $name = $row1['name']; ?>
 
 
  function mainInfo(id) {
-  
+
     $.ajax({
         type: "POST",
         url: "fetchcustomer.php",
