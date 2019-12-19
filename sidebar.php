@@ -74,6 +74,48 @@ if($rolename=='superadmin'){
                 <li class=" nav-item"><a href="retailers.php"><img src="icon/home.png"> <span class="menu-title" data-i18n="nav.dash.main">Dashboard</span></a>
                     
                 </li>
+                <!--**********************************  services  *********************************** -->
+                <li class=" nav-item"><a href="#"><img src="icon/services.png"> <span class="menu-title" data-i18n="nav.templates.main">Services</span></a>
+                    <ul class="menu-content">
+                        <li class="<?php if($cur_page=='add-services.php'){echo "active";}?>"><a class="menu-item " href="add-services.php"><img src="icon/servicesadd.png"> <span data-i18n="nav.templates.vert.main">Add Services</span></a>
+                        </li>
+                        <li  class="<?php if($cur_page=='all-services.php'){echo "active";}?>"><a class="menu-item" href="all-services.php"><img src="icon/servicesall.png"> <span data-i18n="nav.templates.vert.main">All Services</span></a>
+                        </li> 
+                                                                
+                    </ul>
+                </li>
+                <!--********************************************* Packages *******************************  -->
+                <li class=" nav-item"><a href="#"><img src="icon/packages.png"> <span class="menu-title" data-i18n="nav.templates.main">Packages</span></a>
+                    <ul class="menu-content">
+                        <li  class="<?php if($cur_page=='addpackage.php'){echo "active";}?>"><a class="menu-item" href="addpackage.php"> <span data-i18n="nav.templates.vert.main">Add Packages</span></a>
+                        </li>
+                        <li  class="<?php if($cur_page=='all-packages.php'){echo "active";}?>"><a class="menu-item" href="all-packages.php"> <span data-i18n="nav.templates.vert.main">All Packages</span></a>
+                        </li>
+                         <li  class="<?php if($cur_page=='sellpackages.php'){echo "active";}?>"><a class="menu-item" href="sellpackages.php"> <span data-i18n="nav.templates.vert.main">Sell Packages</span></a>
+                        </li> 
+                        <li  class="<?php if($cur_page=='redeempack.php'){echo "active";}?>"><a class="menu-item" href="redeempack.php"> <span data-i18n="nav.templates.vert.main">Redeem Packages</span></a>
+                        </li> 
+                          <li  class="<?php if($cur_page=='packagereport.php'){echo "active";}?>"><a class="menu-item" href="packagereport.php"> <span data-i18n="nav.templates.vert.main">Packages Report</span></a>
+                        </li> 
+                         <!-- <li><a class="menu-item" href="#"> <span data-i18n="nav.templates.vert.main">Service Report</span></a>
+                        </li> -->
+                         <!-- <li><a class="menu-item" href="#"> <span data-i18n="nav.templates.vert.main">Package Setting</span></a>
+                        </li>  -->
+                                                                
+                    </ul>
+                </li>
+                <!---********************************Product  ***********************************************-->
+
+                <li style="background-color:black" class=" nav-item"><a href="#"><img src="icon/services.png"> <span class="menu-title" data-i18n="nav.templates.main">Product</span></a>
+                    <ul class="menu-content">
+                        <li style="background-color:black" class="<?php if($cur_page=='add-product.php'){echo "active";}?>"><a class="menu-item " href="add-product.php"><img src="icon/servicesadd.png"> <span data-i18n="nav.templates.vert.main">Add Product</span></a>
+                        </li>
+                        <li style="background-color:black" class="<?php if($cur_page=='view-product.php'){echo "active";}?>"><a class="menu-item" href="view-product.php"><img src="icon/servicesall.png"> <span data-i18n="nav.templates.vert.main">View Product</span></a>
+                        </li> 
+                                                                
+                    </ul>
+                </li>
+
                 <li class=" nav-item"><a href="#"><img src="icon/customers.png"> <span class="menu-title" data-i18n="nav.templates.main">Customers</span></a>
                     <ul class="menu-content">
                         <li class="<?php if($cur_page=='customer-view.php'){echo "active";}?>"><a class="menu-item" href="customer-view.php"><img src="icon/customers.png"> <span data-i18n="nav.templates.vert.main">All Customers</span></a>
@@ -149,8 +191,8 @@ if($rolename=='superadmin'){
 
                 </li>
 
-                <li class="nav-item"><a href="whats-msg.php"><img src="icon/whatsapp-icon.png"> <span class="menu-title" data-i18n="nav.dash.main">WhatsApp Msg</span></a>        
-                </li>
+                <!--<li class="nav-item"><a href="whats-msg.php"><img src="icon/whatsapp-icon.png"> <span class="menu-title" data-i18n="nav.dash.main">WhatsApp Msg</span></a>        
+                </li> -->
                <!--  <li class=" nav-item"><a href="festivals.php"><img src="icon/loyaltysetting.png"> <span class="menu-title" data-i18n="nav.dash.main">Festivals</span></a>       
                 </li> -->
 
@@ -165,43 +207,9 @@ if($rolename=='superadmin'){
    
 <li class=" nav-item <?php if($cur_page=='creditsms.php'){echo "active";}?>"><a href="creditsms.php"><img src="icon/smscredit.png"> <span class="menu-title" data-i18n="nav.dash.main">Sms Credit</span></a>       
                 </li>
-                 <li class=" nav-item"><a href="#"><img src="icon/services.png"> <span class="menu-title" data-i18n="nav.templates.main">Services</span></a>
-                    <ul class="menu-content">
-                        <li class="<?php if($cur_page=='add-services.php'){echo "active";}?>"><a class="menu-item " href="add-services.php"><img src="icon/servicesadd.png"> <span data-i18n="nav.templates.vert.main">Add Services</span></a>
-                        </li>
-                        <li  class="<?php if($cur_page=='all-services.php'){echo "active";}?>"><a class="menu-item" href="all-services.php"><img src="icon/servicesall.png"> <span data-i18n="nav.templates.vert.main">All Services</span></a>
-                        </li> 
-                                                                
-                    </ul>
-                </li>
-<li style="background-color:black" class=" nav-item"><a href="#"><img src="icon/services.png"> <span class="menu-title" data-i18n="nav.templates.main">Product</span></a>
-                    <ul class="menu-content">
-                        <li style="background-color:black" class="<?php if($cur_page=='add-product.php'){echo "active";}?>"><a class="menu-item " href="add-product.php"><img src="icon/servicesadd.png"> <span data-i18n="nav.templates.vert.main">Add Product</span></a>
-                        </li>
-                        <li style="background-color:black" class="<?php if($cur_page=='view-product.php'){echo "active";}?>"><a class="menu-item" href="view-product.php"><img src="icon/servicesall.png"> <span data-i18n="nav.templates.vert.main">View Product</span></a>
-                        </li> 
-                                                                
-                    </ul>
-                </li>
-                 <li class=" nav-item"><a href="#"><img src="icon/packages.png"> <span class="menu-title" data-i18n="nav.templates.main">Packages</span></a>
-                    <ul class="menu-content">
-                        <li  class="<?php if($cur_page=='addpackage.php'){echo "active";}?>"><a class="menu-item" href="addpackage.php"> <span data-i18n="nav.templates.vert.main">Add Packages</span></a>
-                        </li>
-                        <li  class="<?php if($cur_page=='all-packages.php'){echo "active";}?>"><a class="menu-item" href="all-packages.php"> <span data-i18n="nav.templates.vert.main">All Packages</span></a>
-                        </li>
-                         <li  class="<?php if($cur_page=='sellpackages.php'){echo "active";}?>"><a class="menu-item" href="sellpackages.php"> <span data-i18n="nav.templates.vert.main">Sell Packages</span></a>
-                        </li> 
-                        <li  class="<?php if($cur_page=='redeempack.php'){echo "active";}?>"><a class="menu-item" href="redeempack.php"> <span data-i18n="nav.templates.vert.main">Redeem Packages</span></a>
-                        </li> 
-                          <li  class="<?php if($cur_page=='packagereport.php'){echo "active";}?>"><a class="menu-item" href="packagereport.php"> <span data-i18n="nav.templates.vert.main">Packages Report</span></a>
-                        </li> 
-                         <!-- <li><a class="menu-item" href="#"> <span data-i18n="nav.templates.vert.main">Service Report</span></a>
-                        </li> -->
-                         <!-- <li><a class="menu-item" href="#"> <span data-i18n="nav.templates.vert.main">Package Setting</span></a>
-                        </li>  -->
-                                                                
-                    </ul>
-                </li>
+                 
+
+                 
 
 
                 <li class=" nav-item"><a href="#"><img src="icon/settings.png"> <span class="menu-title" data-i18n="nav.templates.main">Settings</span></a>

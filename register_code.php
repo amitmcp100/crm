@@ -24,7 +24,7 @@ $create_date=date("Y-m-d");
 
 if($username == ""  ||  $email == ""  ||  $contact == "" || $firstname == ""){
 $_SESSION["errorType"] = "danger";
-$_SESSION["errorMsg"] = "Enter manadatory fields";
+$_SESSION["errorMsg"] = "All fields are mandatory";
 header('Location: register.php');
  exit;
 }
