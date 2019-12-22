@@ -334,7 +334,7 @@ while ($row31 = $stmt->fetch()) {
                                                         $total_sale= $row91['amount'];
                                                         $total2 += $total_sale;
 													    $id=$row91['id'];
-													//echo "fdf".$id;
+													    //echo "fdf".$id;
 													?>
                                                     <tr>
                                                         <td><?php echo $row91['id'];?></td>
