@@ -10,8 +10,8 @@ $id=$_GET['id'];
 if(!empty($id))
 {
 // Posted Values
-
-$query="DELETE FROM `tbl_employee` WHERE  `id`='$id'  and  `store_id` = '$store_id'";
+//echo $store_id;die;
+$query="DELETE FROM `tbl_employee` WHERE  `id`='$id'  AND  `store_id` = '$store_id'";
 
 $stmt = $DB->prepare($query);
 $stmt->execute();

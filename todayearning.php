@@ -408,7 +408,7 @@ while ($row31 = $stmt->fetch()) {
                                                     </tr>
                                                    
                                                     <tr>
-                                                        <th><h2>Total Sale-<?php echo $total2;?></h2></th>
+                                                        <th><h2>Total Sale-<?php if($total2!=''){ echo $total2;}else{echo '0';}?></h2></th>
                                                     </tr>
                                                    
                                                 </tfoot>

@@ -36,7 +36,7 @@ include 'header.php';
                     </div>
                 </div>
 
-            </div>
+                </div>
                    <div class="row "> 
                     <?php if($_GET['data']=='update'){?> 
                     <div class="alert btn-success mb-2" role="alert">
@@ -83,8 +83,6 @@ include 'header.php';
                                                         <th>Appoinment Time</th>
                                                         <th>Employee</th>
                                                         <th>Services</th>
-
-                                                        
                                                     </tr>
                                                 </thead>
                                                 <tbody>
