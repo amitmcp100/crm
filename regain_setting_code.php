@@ -10,9 +10,10 @@ $store_id = $_SESSION['store_id'];
 $reminder = $_POST['reminder'];
 $duration = $_POST['duration'];
 //mysqli_free_result($result);
-
+//echo $id;
+//echo $store_id;die;
 if(!empty($id)){
-	$query="UPDATE `tbl_regain` SET `reminder` = '$reminder',`duration` = '$duration' WHERE `id` = '$id' AND 'store_id' = '$store_id'";
+	$query="UPDATE `tbl_regain` SET `reminder` = '$reminder',`duration` = '$duration' WHERE `id` = '$id' AND `store_id` = '$store_id'";
 	$stmt = $DB->prepare($query);
 	$stmt->execute();
 
@@ -31,8 +32,8 @@ if($stmt==true)
 }
 else
 {
-header('Location: regain_setting.php?data=error');
-exit;
+	header('Location: regain_setting.php?data=error');
+	exit;
 }
 }
  ?>

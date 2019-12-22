@@ -100,7 +100,7 @@ include 'header.php';
                                                 $stmt->setFetchMode(PDO::FETCH_ASSOC);
                                                 while ($row3 = $stmt->fetch()) { ?>
                                                  <tr>
-                                                        <td> <a href="deleteappintment.php?id=<?php echo $row3['id'];?>" onclick="return confirm('Are you sure you want to delete this Appintment?');" class="btn btn-warning  box-shadow-2 mr-1 mb-1" data-toggle="tooltip" title="DELETE CUSTOMER"><i class="ft-delete"></i></a></td>
+                                                        <td> <a href="deleteappintment.php?id=<?php echo $row3['id'];?>" onclick="return confirm('Are you sure you want to delete this Appintment?');" class="btn btn-warning  box-shadow-2 mr-1 mb-1" data-toggle="tooltip" title="DELETE APPOINMENT"><i class="ft-delete"></i></a></td>
                                                         <td><?php echo $row3['c_name'];?></td>
                                                         <td><?php echo $row3['c_mobile'];?></td>
                                                         <td><?php echo $row3['c_email'];?></td>
