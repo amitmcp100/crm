@@ -216,6 +216,8 @@ if($rolename=='superadmin'){
                     <ul class="menu-content">
                         <li  class="<?php if($cur_page=='profile.php'){echo "active";}?>"><a class="menu-item" href="profile.php"><span data-i18n="nav.templates.vert.main">Profile</span></a>
                         </li>
+                        <li><a class="menu-item" href="senderid.php"><span data-i18n="nav.templates.vert.main">SenderId Setting</span></a>
+                        </li>
                         <li  class="<?php if($cur_page=='sub-users.php'){echo "active";}?>"><a class="menu-item" href="sub-users.php"> <span data-i18n="nav.templates.vert.main">Sub User</span></a>
                         </li> 
                          <li  class="<?php if($cur_page=='allroles.php'){echo "active";}?>"><a class="menu-item" href="allroles.php"> <span data-i18n="nav.templates.vert.main">Roles</span></a>
@@ -336,6 +338,8 @@ if($rolename=='superadmin'){
                 <li class=" nav-item"><a href="#"><img src="icon/settings.png"> <span class="menu-title" data-i18n="nav.templates.main">Settings</span></a>
                     <ul class="menu-content">
                         <li><a class="menu-item" href="profile.php"><span data-i18n="nav.templates.vert.main">Profile</span></a>
+                        </li>
+                        <li><a class="menu-item" href="profile.php"><span data-i18n="nav.templates.vert.main">SenderId Setting</span></a>
                         </li>
                         <li><a class="menu-item" href="sub-users.php"> <span data-i18n="nav.templates.vert.main">Sub User</span></a>
                         </li> 

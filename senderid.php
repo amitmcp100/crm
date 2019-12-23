@@ -8,6 +8,9 @@ if (!isset($_SESSION["user_id"]) || $_SESSION["user_id"] == "") {
 // set page title
 $title = "Dashboard";
 
+$store_id = $_SESSION['store_id'];
+
+// if the rights are not set then add them in the current session
 include 'header.php';
 ?>
     <!-- END: Header-->
@@ -24,13 +27,13 @@ include('sidebar.php');
         <div class="content-wrapper">
             <div class="content-header row mb-1">
                 <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title">Reminder Setting</h3>
+                    <h3 class="content-header-title">SenderId Setting</h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="retailers.php">Home</a>
                                 </li>
-                                 <li class="breadcrumb-item active"><a href="#">Reminder Setting</a>
+                                 <li class="breadcrumb-item active"><a href="#">SenderId Setting</a>
                                 </li>
                             </ol>
                         </div>
@@ -40,45 +43,43 @@ include('sidebar.php');
                 
             </div>
             <div class="row ">
-                    <?php if ($_GET['data'] == 'update') { ?> 
-                    <div class="alert btn-success mb-2" role="alert">
-                    <strong>Reminder Update</strong> Sucessfully...! 
-
-                    </div>
-                    <?php
-                    } ?>
-                    <?php if ($_GET['data'] == 'error') { ?>
-                    <div class="alert alert-warning mb-2" role="alert">
-                    <strong>Warning!</strong> Please Try Again !.
-
-                    </div>
-                    <?php
-                    }
-                    ?>   
+            <?php if ($_GET['data'] == 'update') { ?> 
+            <div class="alert btn-success mb-2" role="alert">
+                <strong>Sender Id Update</strong> Sucessfully...! 
+                    
+            </div>
+            <?php
+            } ?>
+            <?php if ($_GET['data'] == 'error') { ?>
+            <div class="alert alert-warning mb-2" role="alert">
+                <strong>Warning!</strong> Please Try Again !.
+                    
+                </div><?php
+            } ?>   
 
             </div> 
-               
+
                 
             </div>
             <div class="content-body">
 
                 <?php
-                    $sql02 = "SELECT *  FROM `tbl_reminder`";
+                    $sql03 = "SELECT *  FROM `tbl_user_group` where `store_id` = '$store_id'";
 
-                    $stmt = $DB->prepare($sql02);
+                    $stmt = $DB->prepare($sql03);
                     $stmt->execute();
                     $stmt->setFetchMode(PDO::FETCH_ASSOC);
                         
                     if($stmt == true){
 
-                    while ($row02 = $stmt->fetch()) {
-                    $reminder = $row02['reminder'];
-                    $duration =$row02['duration'];
-                    $id = $row02['id'];
-                    //echo$row02['duration'];
+                    while ($row03 = $stmt->fetch()) {
+                    $senderid = $row03['sender_id'];
+                    $storeid =$row03['store_id'];
+                    $id = $row03['id'];
+                   
                     }
                 }
-                
+              
                ?>
                
 
@@ -87,8 +88,7 @@ include('sidebar.php');
              server with default setting (user 'root' with no password) */
             //include("configinc2.php");
 
-            $usid      =  $_SESSION["user_id"];
-            $store_id  =  $_SESSION["store_id"];
+            $usid = $_SESSION["user_id"];
            
             ?>
                 <section id="horizontal-form-layouts">
@@ -97,7 +97,7 @@ include('sidebar.php');
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="horz-layout-colored-controls">Reminder Setting</h4>
+                                    <h4 class="card-title" id="horz-layout-colored-controls">SenderId Setting</h4>
                                     <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
                                         <ul class="list-inline mb-0">
@@ -108,22 +108,23 @@ include('sidebar.php');
                                         </ul>
                                     </div>
                                 </div>
+
+                               
                                 <div class="card-content collpase show">
                                     <div class="card-body">
-                                    <form class="form form-horizontal" name="uploadimage"  action="reminder_setting_code.php" enctype="multipart/form-data" method="post">
+                                    <form class="form form-horizontal" name="uploadimage"  action="senderid_code.php" enctype="multipart/form-data" method="post">
                                     <input type="hidden" name="userid" value="<?php echo $userid; ?>">
                                     <input type="hidden" name="store_id" value="<?php echo $store_id; ?>">
                                     <input type="hidden" name="id" value="<?php echo $id;?>">
                                     <div class="form-body">
                                     <h4 class="form-section"><i class="la la-eye"></i> Setting Details</h4>
                                         <div class="row">
-                                          
-                                        <div class="col-md-6">
+                                         <div class="col-md-6">
                                             <div class="form-group row">
-                                                <label class="col-md-3 label-control" for="userinput1">Enter Number</label>
+                                                <label class="col-md-3 label-control" for="userinput1">Enter Sender Id</label>
                                                 <div class="col-md-9 mx-auto">
-                                                    <input type="number" id="userinput1" class="form-control border-primary" placeholder="" name="reminder"  required="" value="<?php echo $reminder ?>">
-                                                    <input type="hidden" name="store" value="<?php
+                                                    <input type="text" id="userinput1" class="form-control border-primary" placeholder="" name="senderid"  required="" value="<?php echo $senderid ?>">
+                                                    <input type="hidden" name="store_id" value="<?php
                                                     echo $store_id;
                                                     ?>">
                                                     <input type="hidden" name="user" value="<?php
@@ -132,20 +133,9 @@ include('sidebar.php');
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-md-3 label-control" for="userinput1">Duration</label>
-                                             <div class="col-md-9 mx-auto">
-                                                     <select class="form-control  border-primary" id="duration"  name="duration">
-                                                        <option selected="selected" value="">Select Time Duration</option>
-                                                         
-                                                             <option value="days" <?php if($duration == 'days') echo 'selected'; ?>>Days</option>
-                                                             <option value="months"<?php if($duration == 'months') echo 'selected'; ?>>Months</option>
-                                                             <option value="years"<?php  if($duration == 'years') echo 'selected'; ?>>Years</option>
-                                                     </select>
-                                                 </div>
-                                            </div>
-                                        </div>                                        
+
+                                       
+
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                               <div style="margin-top:10px;margin-left: 20px;"><button type="submit" class="btn btn-primary" name="submit" value="Submit">

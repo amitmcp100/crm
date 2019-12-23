@@ -89,9 +89,6 @@ $err = curl_error($curl);
 //exit;
 }
 
-
-
-
 }
 
  ?>
