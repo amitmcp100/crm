@@ -121,27 +121,27 @@
                                                    $endDate = $_POST['endDate'];
                                                      
                                                    $userid=$_SESSION["user_id"];
-                                                   $sql01 = "SELECT *  FROM `system_users` WHERE `u_userid` = '$userid'";
-                                                    $stmt = $DB->prepare($sql01);
-                                                    $stmt->execute();
-                                                    $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                                                    while ($row01 = $stmt->fetch()) {
+                                                   // $sql01 = "SELECT *  FROM `system_users` WHERE `u_userid` = '$userid'";
+                                                   //  $stmt = $DB->prepare($sql01);
+                                                   //  $stmt->execute();
+                                                   //  $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                                                   //  while ($row01 = $stmt->fetch()) {
                                                     
-                                                    $uid=$row01['reguser_id'];
-                                                    }
+                                                   //  $uid=$row01['reguser_id'];
+                                                   //  }
                                                     
-                                                    // Attempt select query execution
-                                                    $sql = "SELECT *  FROM `tbl_user_group` WHERE `child_id` = '$uid'";
-                                                    //echo $sql;
-                                                    $stmt = $DB->prepare($sql);
-                                                    $stmt->execute();
-                                                    $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                                                    while ($row = $stmt->fetch()) {
+                                                   //  // Attempt select query execution
+                                                   //  $sql = "SELECT *  FROM `tbl_user_group` WHERE `child_id` = '$uid'";
+                                                   //  //echo $sql;
+                                                   //  $stmt = $DB->prepare($sql);
+                                                   //  $stmt->execute();
+                                                   //  $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                                                   //  while ($row = $stmt->fetch()) {
                                                     
-                                                    $store_id=$row['store_id'];
-                                                    }
+                                                   //  $store_id=$row['store_id'];
+                                                   //  }
                                                     
-                                                    $sql1 = "SELECT *  FROM `tbl_employee` WHERE  e_date between '".$fromDate."' and '".$endDate."'";
+                                                    $sql1 = "SELECT *  FROM `tbl_employee` WHERE  `store_id` = '$store_id' AND  e_date between '".$fromDate."' and '".$endDate."'";
                                                     
                                                     $stmt = $DB->prepare($sql1);
                                                     $stmt->execute();
@@ -174,28 +174,28 @@
                                                     }else{
 
                                                 $userid=$_SESSION["user_id"];
-                                                $sql01 = "SELECT *  FROM `system_users` WHERE `u_userid` = '$userid'";
-                                                $stmt = $DB->prepare($sql01);
-                                                $stmt->execute();
-                                                $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                                                while ($row01 = $stmt->fetch()) {  
+                                                // $sql01 = "SELECT *  FROM `system_users` WHERE `u_userid` = '$userid'";
+                                                // $stmt = $DB->prepare($sql01);
+                                                // $stmt->execute();
+                                                // $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                                                // while ($row01 = $stmt->fetch()) {  
                                                    
-                                                $uid=$row01['reguser_id'];
-                                                }
-                                                   // Attempt select query execution
-                                                   $sql = "SELECT *  FROM `tbl_user_group` WHERE `child_id` = '$uid'";
-                                                   //echo $sql;
+                                                // $uid=$row01['reguser_id'];
+                                                // }
+                                                //    // Attempt select query execution
+                                                //    $sql = "SELECT *  FROM `tbl_user_group` WHERE `child_id` = '$uid'";
+                                                //    //echo $sql;
                                                 
-                                                $stmt = $DB->prepare($sql);
-                                                $stmt->execute();
-                                                $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                                                while ($row = $stmt->fetch()) {  
+                                                // $stmt = $DB->prepare($sql);
+                                                // $stmt->execute();
+                                                // $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                                                // while ($row = $stmt->fetch()) {  
                                                    
-                                                $store_id=$row['store_id'];
-                                                }
+                                                // $store_id=$row['store_id'];
+                                                // }
 
                                        
-                                                $sql1 = "SELECT *  FROM `tbl_employee`";
+                                                $sql1 = "SELECT *  FROM `tbl_employee` Where `store_id` = '$store_id'";
                                                    //echo $sql1;
                                                    
                                                    $stmt = $DB->prepare($sql1);
