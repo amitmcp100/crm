@@ -234,11 +234,15 @@ else{
 ));
 
 $response = curl_exec($curl);
+<<<<<<< HEAD
 // echo "sss".$sender_id;echo "</br>";
 // echo $sender_id;echo "</br>";
 // echo $mobile;echo "</br>";
 // echo $response;
 // exit;
+=======
+
+>>>>>>> 077b735e41f57198d9785aea939e94f9eed9914b
 if($response=='sms sent successfully'){
 	$update_sms=$available_sms-1;
 	$u_sms=$used_sms+1;

@@ -185,7 +185,7 @@ if($rolename=='superadmin'){
                         </li>
                         <li class="<?php if($cur_page=='sales-report.php'){echo "active";}?>"><a class="menu-item" href="sales-report.php"><img src="icon/loyaltypoint.png"> <span data-i18n="nav.templates.vert.main">Complete Report</span></a>
                         </li>     
- <li class="<?php if($cur_page=='employee-report.php'){echo "active";}?>"><a href="employee-report.php"><img src="icon/servicesall.png"> <span class="menu-title" data-i18n="nav.dash.main">Employee Report</span></a> 
+                        <li class="<?php if($cur_page=='employee-report.php'){echo "active";}?>"><a href="employee-report.php"><img src="icon/servicesall.png"> <span class="menu-title" data-i18n="nav.dash.main">Employee Report</span></a> 
                 </li>                                
                     </ul>
 
@@ -203,9 +203,9 @@ if($rolename=='superadmin'){
                 </li>
                 <li class=" nav-item <?php if($cur_page=='feedback.php'){echo "active";}?>"><a href="feedback.php"><img src="icon/feedback.png"> <span class="menu-title" data-i18n="nav.dash.main">Feedback</span></a>       
                 </li>
-   <li class=" nav-item <?php if($cur_page=='creditreport.php'){echo "active";}?>"><a href="creditreport.php"><img src="icon/smscredit.png"> <span class="menu-title" data-i18n="nav.dash.main">Sms Reports</span></a>  
+                <li class=" nav-item <?php if($cur_page=='creditreport.php'){echo "active";}?>"><a href="creditreport.php"><img src="icon/smscredit.png"> <span class="menu-title" data-i18n="nav.dash.main">Sms Reports</span></a>  
    
-<li class=" nav-item <?php if($cur_page=='creditsms.php'){echo "active";}?>"><a href="creditsms.php"><img src="icon/smscredit.png"> <span class="menu-title" data-i18n="nav.dash.main">Sms Credit</span></a>       
+                <li class=" nav-item <?php if($cur_page=='creditsms.php'){echo "active";}?>"><a href="creditsms.php"><img src="icon/smscredit.png"> <span class="menu-title" data-i18n="nav.dash.main">Sms Credit</span></a>       
                 </li>
                  
 

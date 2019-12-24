@@ -47,6 +47,7 @@ $sql = "INSERT INTO `tbl_user_data` (`id`,`store_id`,`first_name`, `last_name`, 
 $stmt = $DB->prepare($sql);
 $stmt->execute();
 $last_id = $DB->lastInsertId();
+
     echo "New record created successfully. Last inserted ID is: " . $last_id;
 
 
