@@ -4,24 +4,24 @@
                 include("config.php");
 
                 // Check connection
-                
-                $userid=$_SESSION["user_id"];
-                $sql01 = "SELECT *  FROM `system_users` WHERE `u_userid` = '1'";
-                $stmt = $DB->prepare($sql01);
-                $stmt->execute();
-                $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                while ($row01 = $stmt->fetch()) {
-                    $reg_id=$row01['reguser_id'];
-                    }
+                $store_id  = $_GET['store_id'];
+                // $userid=$_SESSION["user_id"];
+                // $sql01 = "SELECT *  FROM `system_users` WHERE `u_userid` = '1'";
+                // $stmt = $DB->prepare($sql01);
+                // $stmt->execute();
+                // $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                // while ($row01 = $stmt->fetch()) {
+                //     $reg_id=$row01['reguser_id'];
+                //     }
                 // Attempt select query execution
-                $sql = "SELECT *  FROM `tbl_user_data` WHERE `id` = '$reg_id'";
+                $sql = "SELECT *  FROM `tbl_store` WHERE `store_id` = '$store_id'";
                 $stmt = $DB->prepare($sql);
                 $stmt->execute();
                 $stmt->setFetchMode(PDO::FETCH_ASSOC);
                 while ($row = $stmt->fetch()) {
                 
                
-                $business_name=$row['business_name'];
+                $business_name=$row['store_name'];
                 
                  }
                 
@@ -163,10 +163,10 @@
                                     <div class="card-body">
                                     
                                         <form class="form form-horizontal" action="feedback_save.php" method="post">
-                                        
+                                           
                                        
                                             <div class="form-body">
-                                               
+                                                <input type="hidden" name="store_id" value="<?php echo $store_id; ?>">
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group row">

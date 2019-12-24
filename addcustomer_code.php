@@ -136,7 +136,7 @@ $used_sms=$row1['used_sms'];
 
 }
 
-$sql2 = "SELECT *  FROM `tbl_user_group` WHERE `child_id` = '$userid' and `store_id` = '$store_id'";
+$sql2 = "SELECT *  FROM `tbl_user_group` WHERE  `store_id` = '$store_id' and `parent_id`='0'";
 $stmt = $DB->prepare($sql2);
 $stmt->execute();
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -146,12 +146,12 @@ $sender_id=$row2['sender_id'];
 }
 
 
-$sql12 = "SELECT *  FROM `tbl_user_data` WHERE `store` = '$store' and `roles_name` = 'superadmin' and `store_id` = '$store_id'";
+$sql12 = "SELECT *  FROM `tbl_store` WHERE  `store_id` = '$store_id'";
 $stmt = $DB->prepare($sql12);
 $stmt->execute();
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
 while ($row12 = $stmt->fetch()) {
-$business_name=$row12['business_name'];
+$business_name=$row12['store_name'];
 
 }
 
@@ -176,15 +176,16 @@ else{
 
 // fetch tiny url..................!
 
-$sql010 = "SELECT *  FROM `tbl_user_group` WHERE  `child_id` = '$userid'  and `store_id` = '$store_id'";
-$stmt = $DB->prepare($sql010);
-$stmt->execute();
-$stmt->setFetchMode(PDO::FETCH_ASSOC);
-while ($row010 = $stmt->fetch()) {
-$tinyurl=$row010['tiny_url'];
-echo $tinyurl;	
-}
+// $sql010 = "SELECT *  FROM `tbl_user_group` WHERE  `child_id` = '$userid'  and `store_id` = '$store_id'";
+// $stmt = $DB->prepare($sql010);
+// $stmt->execute();
+// $stmt->setFetchMode(PDO::FETCH_ASSOC);
+// while ($row010 = $stmt->fetch()) {
+// $tinyurl=$row010['tiny_url'];
+// echo $tinyurl;	
+// }
 
+$tinyurl  = "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']."?store_id=".$store_id;
 // fetch tiny url...................!
 
 $sql009 = "SELECT *  FROM `tbl_feedbacksetting` where `store_id` = '$store_id'";
@@ -233,6 +234,11 @@ else{
 ));
 
 $response = curl_exec($curl);
+// echo "sss".$sender_id;echo "</br>";
+// echo $sender_id;echo "</br>";
+// echo $mobile;echo "</br>";
+// echo $response;
+// exit;
 if($response=='sms sent successfully'){
 	$update_sms=$available_sms-1;
 	$u_sms=$used_sms+1;
@@ -242,7 +248,7 @@ if($response=='sms sent successfully'){
 	$stmt->execute();
 
 
-	$query011="INSERT INTO `sms_report` (`id`, `store_id`, `message`,`mobile`,`from_date`, `to_date`, `state`,`operator`, `status`, `send`,`update_on`) VALUES (NULL'$store_id','$sms_msg_text','$mobile','$create_date','$create_date', '1','operator','active','yes','on')";
+	$query011="INSERT INTO `sms_report` (`id`, `store_id`, `message`,`mobile`,`from_date`, `to_date`, `state`,`operator`, `status`, `send`,`update_on`) VALUES (NULL,'$store_id','$sms_msg_text','$mobile','$create_date','$create_date', '1','operator','active','yes','on')";
 	$stmt = $DB->prepare($query011);
 	$stmt->execute();
 
