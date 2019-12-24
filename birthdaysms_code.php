@@ -19,7 +19,7 @@ $used_sms=$row1['used_sms'];
 
 }
 
-$sql2 = "SELECT *  FROM `tbl_user_group` WHERE `store_id` = '$store_id'";
+$sql2 = "SELECT *  FROM `tbl_user_group` WHERE `store_id` = '$store_id' and `parent_id`='0'";
 //echo $sql2;
 $stmt = $DB->prepare($sql2);
 $stmt->execute();
@@ -46,12 +46,12 @@ $name=$row4['name'];
 //print_r($mobile);
 //$count_mobile=count($mobile);
 //$mobiles= implode(",",$mobile);
-$sql12 = "SELECT *  FROM `tbl_user_data` WHERE `store_id` = '$store_id' and `roles_name` = 'superadmin'";
+$sql12 = "SELECT *  FROM `tbl_store` WHERE `store_id` = '$store_id'";
 $stmt = $DB->prepare($sql12);
 $stmt->execute();
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
 while ($row12 = $stmt->fetch()) {
-$business_name=$row12['business_name'];
+$business_name=$row12['store_name'];
 
 
 }
@@ -67,19 +67,6 @@ $mess=$row001['message'];
 
 }
 
-if(!empty($mess)){
-		$mess=$row001['message'];
-}else{
-	 $sql002 = "SELECT *  FROM `smstemplates` WHERE `message_type` = 'Birthday' and `store_id` = '$store_id' ";
-	 $stmt = $DB->prepare($sql002);
-	$stmt->execute();
-	$stmt->setFetchMode(PDO::FETCH_ASSOC);
-	while ($row002 = $stmt->fetch()) {
-	$mess=$row002['message'];
-
-	}
-	
-}
 
 //echo "m".$mess;echo "</br>";
 $sms_text=str_replace("customer_name",$name,$mess);
@@ -103,10 +90,11 @@ curl_setopt_array($curl, array(
 ));
 
 $response = curl_exec($curl);
-//echo "sss".$sender_id;echo "</br>";
-//echo $sender_id;echo "</br>";
-//echo $response;
-//exit;
+// echo "sss".$store_id;echo "</br>";
+// echo "sss".$sender_id;echo "</br>";
+// echo $sender_id;echo "</br>";
+// echo $response;
+// exit;
 if($response=='sms sent successfully'){
 	$update_sms=$available_sms-1;
 	$u_sms=$used_sms+1;
