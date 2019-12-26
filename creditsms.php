@@ -99,7 +99,7 @@ include 'header.php';
                                 <div class="card-content collpase show">
                                     <div class="card-body">
                                     
-                                        <form class="form form-horizontal" action="addcustomer_code.php" method="post">
+                                        <form class="form form-horizontal" action="creditsms_code.php" method="post">
                                         <input type="hidden" name="userid" value="<?php echo $_SESSION["user_id"];?>">
                                         <input type="hidden" name="store_id" value="<?php echo $store_id;?>">
                                             <div class="form-body">
@@ -133,9 +133,9 @@ include 'header.php';
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group row">
-                                                            <label class="col-md-3 label-control" for="userinput4">SMS Amount (Buy)</label>
+                                                            <label class="col-md-3 label-control" for="userinput4">Credit SMS</label>
                                                             <div class="col-md-9 mx-auto">
-                                                                <input type="text" id="userinput4" class="form-control border-primary" placeholder="SMS Amount (Buy)" name="amount"  >
+                                                                <input type="text" id="userinput4" class="form-control border-primary" placeholder="SMS Amount (Buy)" name="sms"  >
                                                             </div>
                                                         </div>
                                                     </div>

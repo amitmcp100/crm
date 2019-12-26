@@ -19,7 +19,7 @@ $used_sms=$row1['used_sms'];
 
 }
 
-$sql2 = "SELECT *  FROM `tbl_user_group` WHERE `store_id` = '$store_id'";
+$sql2 = "SELECT *  FROM `tbl_user_group` WHERE `store_id` = '$store_id' AND `parent_id`= '0'";
 //echo $sql2;
 $stmt = $DB->prepare($sql2);
 $stmt->execute();
@@ -28,7 +28,7 @@ $result = array();
 while ($row2 = $stmt->fetch()) {  
 $sender_id=$row2['sender_id'];
 }
-
+//echo $sender_id;die;
 if($available_sms>'1'){
 
 
@@ -56,9 +56,7 @@ $business_name=$row12['business_name'];
 
 }
 
-
-
- $sql001 = "SELECT *  FROM `smstemplates` WHERE `message_type` = 'Lost' and `store_id` = '$store_id'";
+$sql001 = "SELECT *  FROM `smstemplates` WHERE `message_type` = 'Lost' AND `store_id` = '$store_id'";
 $stmt = $DB->prepare($sql001);
 $stmt->execute();
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -68,21 +66,6 @@ $mess=$row001['message'];
 
 }
 
-if(!empty($mess)){
-		$mess=$row001['message'];
-}else{
-	 $sql002 = "SELECT *  FROM `smstemplates` WHERE `message_type` = 'Lost' and `store_id` = '$store_id'";
-	 $stmt = $DB->prepare($sql002);
-	$stmt->execute();
-	$stmt->setFetchMode(PDO::FETCH_ASSOC);
-	$result = array();
-	while ($row002 = $stmt->fetch()) {  
-	
-	$mess=$row002['message'];
-
-	}
-	
-}
 
 //echo "m".$mess;echo "</br>";
 $sms_text=str_replace("customer_name",$name,$mess);
@@ -106,12 +89,12 @@ curl_setopt_array($curl, array(
 ));
 
 $response = curl_exec($curl);
-//echo "sss".$sender_id;echo "</br>";
-//echo $sender_id;echo "</br>";
-//echo $response;
-//exit;
+// echo "sss".$sender_id;echo "</br>";
+// echo $sender_id;echo "</br>";
+// echo $response;
+// exit;
 if($response=='sms sent successfully'){
-	$update_sms=$available_sms-1;
+	 $update_sms=$available_sms-1;
 	$u_sms=$used_sms+1;
 	$query="UPDATE `creditsms` SET `used_sms` = '$u_sms',`available_sms` = '$update_sms' WHERE `store_id` = '$store_id'";
 	$stmt = $DB->prepare($query);
