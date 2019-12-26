@@ -138,12 +138,13 @@ while ($row31 = $stmt->fetch()) {
 
                     $sql37 = "SELECT `name`  FROM `tbl_employee` WHERE `store_id` = '$store_id'";
                     //echo $sql31;
+                    $employee_name = [];
                     $stmt = $DB->prepare($sql37);
                     $stmt->execute();
                     $stmt->setFetchMode(PDO::FETCH_ASSOC);
                     $result = array();
                     while ($row37 = $stmt->fetch()) { 
-                        $employee_name[]= $row37['name'];
+                        $employee_name= $row37['name'];
 
                     }
                     foreach($employee_name as $emp)
@@ -188,7 +189,11 @@ while ($row31 = $stmt->fetch()) {
                     </div>
 
                     
-                <?php } } }?>
+                <?php
+                     }
+                 }
+                }
+            ?>
            
                  
                   <?php
