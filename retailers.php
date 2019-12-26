@@ -92,7 +92,7 @@ $userid=$_SESSION["user_id"];
 
 $store_id =  $_SESSION['store_id'];
 $sql1 = "SELECT *  FROM `tbl_customer_data` WHERE `store_id` = '$store_id'";
-//echo $sql01;
+//echo $sql1;
 $stmt = $DB->prepare($sql1);
 $stmt->execute();
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -100,7 +100,6 @@ $result = array();
 while ($row1 = $stmt->fetch()) { 
 $cid[]=$row1['id'];
 }
-
 
 $sql2 = "SELECT *  FROM `tbl_campaign` WHERE `store_id` = '$store_id'";
 //echo $sql;

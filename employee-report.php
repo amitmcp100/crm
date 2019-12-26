@@ -134,10 +134,11 @@ include('sidebar.php');
                                     <div style="width:3000px;"> 
 
                                     <?php
-                                            $servername = "localhost";
-                                            $username = "root";
-                                            $password = "";
-                                            $dbname = "loiretec_crmas";
+                                           define('DB_DRIVER', 'mysql');
+                                           define('DB_SERVER', 'localhost');
+                                           define('DB_SERVER_USERNAME', 'root');
+                                           define('DB_SERVER_PASSWORD', '');
+                                           define('DB_DATABASE', 'loiretec_crmas');
 
                                             // Create connection
                                             $conn = new mysqli($servername, $username, $password, $dbname);
