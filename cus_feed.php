@@ -4,7 +4,7 @@
                 include("config.php");
 
                 // Check connection
-                $store_id  = $_GET['store_id'];
+                $store_id  = $_GET['storeid'];
                 // $userid=$_SESSION["user_id"];
                 // $sql01 = "SELECT *  FROM `system_users` WHERE `u_userid` = '1'";
                 // $stmt = $DB->prepare($sql01);
@@ -166,7 +166,7 @@
                                            
                                        
                                             <div class="form-body">
-                                                <input type="hidden" name="store_id" value="<?php echo $store_id; ?>">
+                                                <input type="hidden" name="store_id" value="<?php echo $storeid; ?>">
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group row">
