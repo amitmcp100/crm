@@ -79,6 +79,31 @@ $query2=mysqli_query($con,"INSERT INTO `tbl_user_data` (`id`, `first_name`, `las
 
 if($stmt==true)
 {
+  //Update required data particular store 
+  $sql = "INSERT INTO `tbl_customer_group` (`store_id`,`name`,`description`,`status`) VALUES
+	('$store_id','Default','Default','enabled'),
+	('$store_id','Platinum','Platinum','enabled'),
+	('$store_id','Gold','Gold','enabled'),
+	('$store_id','Silver','Silver','enabled'),
+	('$store_id','Bronze','Bronze','enabled'),
+	('$store_id','Loyal','Loyal','enabled'),
+	('$store_id','Prime','Prime','enabled'),
+	('$store_id','Exitica','Exitica','enabled')";
+	$stmt = $DB->prepare($sql);
+	$stmt->execute(); 
+
+  /// Update customer source default data 
+    $sql = "INSERT INTO `tbl_customer_source` (`store_id`,`name`,`description`,`status`) VALUES
+	('$store_id','Friends','Friends','enabled'),
+	('$store_id','Google Search','Google Search','enabled'),
+	('$store_id','Social Media','Social Media','enabled'),
+	('$store_id','Direct Walkin','Direct Walkin','enabled'),
+	('$store_id','Others','Others','enabled')";
+	$stmt = $DB->prepare($sql);
+	$stmt->execute(); 
+
+   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	$_SESSION["errorType"] = "success";
 	$_SESSION["errorMsg"]  =  "Register successfully login with your username and password";
 	header('Location: index.php?data=success');

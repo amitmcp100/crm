@@ -166,7 +166,7 @@
                                            
                                        
                                             <div class="form-body">
-                                                <input type="hidden" name="store_id" value="<?php echo $storeid; ?>">
+                                                <input type="hidden" name="store_id" value="<?php echo $store_id; ?>">
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group row">
