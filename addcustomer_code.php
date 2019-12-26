@@ -185,7 +185,7 @@ else{
 // echo $tinyurl;	
 // }
 
-$tinyurl  = "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']."?store_id=".$store_id;
+$tinyurl  = "https://tinyurl.com/r4wqkfq?storeid=".$store_id;
 // fetch tiny url...................!
 
 $sql009 = "SELECT *  FROM `tbl_feedbacksetting` where `store_id` = '$store_id'";
@@ -203,7 +203,7 @@ $sms_text=str_replace("customer_name",$name,$mess);
 $sms_text=str_replace("retailer_name",$business_name,$sms_text);
  
 if($feedback_value=='every'){
-	$sms_msg_text= $sms_text." Please Give feedback" .$tinyurl."!";
+	$sms_msg_text= $sms_text." Please Give feedback\n" .$tinyurl;
 }
 else{
 	$sms_msg_text=$sms_text;
