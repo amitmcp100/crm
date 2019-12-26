@@ -6,6 +6,7 @@ if (!isset($_SESSION["user_id"]) || $_SESSION["user_id"] == "") {
 }
 
 // set page title
+$store_id = $_SESSION['store_id'];
 $title = "Dashboard";
 $today_date = date('Y-m-d');
 // if the rights are not set then add them in the current session
@@ -134,11 +135,10 @@ include('sidebar.php');
                                     <div style="width:3000px;"> 
 
                                     <?php
-                                           define('DB_DRIVER', 'mysql');
-                                           define('DB_SERVER', 'localhost');
-                                           define('DB_SERVER_USERNAME', 'root');
-                                           define('DB_SERVER_PASSWORD', '');
-                                           define('DB_DATABASE', 'loiretec_crmas');
+                                            $servername = "localhost";
+                                            $username = "root";
+                                            $password = "";
+                                            $dbname = "loiretec_crmas";
 
                                             // Create connection
                                             $conn = new mysqli($servername, $username, $password, $dbname);
@@ -154,7 +154,7 @@ include('sidebar.php');
                                                 $endDate = $_POST['endDate'];    
 
 
-                                            $sql =  "SELECT `name`  FROM `tbl_employee`";
+                                            $sql =  "SELECT `name`  FROM `tbl_employee` WHERE `store_id` = '$store_id'";
                                             $result = $conn->query($sql);
 
                                             if ($result->num_rows > 0) {
@@ -166,7 +166,7 @@ include('sidebar.php');
                                                     <tr><td>Price</td><td>Service</td></tr>
 
                                                  <?php   $name=$row['name']; 
-                                        $sql1 =  "SELECT `amount`,`services`  FROM `tbl_sales_report` WHERE employee='$name' AND sales_date between '".$fromDate."' and '".$endDate."' AND `services` != ''";
+                                        $sql1 =  "SELECT `amount`,`services`  FROM `tbl_sales_report` WHERE employee='$name' AND sales_date between '".$fromDate."' and '".$endDate."' AND  `store_id` = '$store_id'";
                                             $result1 = $conn->query($sql1);
 
                                             if ($result1->num_rows > 0) {
@@ -193,14 +193,14 @@ include('sidebar.php');
  <div style="width:3000px;"> 
 
 <?php 
- $sql =  "SELECT `name`  FROM `tbl_employee`";
+ $sql =  "SELECT `name`  FROM `tbl_employee` WHERE `store_id` = '$store_id'";
  $result = $conn->query($sql);
 
  if ($result->num_rows > 0) {
 
     while($row = $result->fetch_assoc()) { 
 
-        $name=$row['name'];$sql4 =  "SELECT SUM(`amount`) as totalamount  FROM `tbl_sales_report` WHERE employee='$name' AND sales_date between '".$fromDate."' and '".$endDate."' AND `services` != ''"; 
+        $name=$row['name'];$sql4 =  "SELECT SUM(`amount`) as totalamount  FROM `tbl_sales_report` WHERE employee='$name' AND `sales_date` between '".$fromDate."' and '".$endDate."'"; 
       $result4 = $conn->query($sql4);
       if ($result4->num_rows > 0) {
         // output data of each row
@@ -219,7 +219,7 @@ include('sidebar.php');
 
 
 
-$sql =  "SELECT `name`  FROM `tbl_employee`";
+$sql =  "SELECT `name`  FROM `tbl_employee` WHERE `store_id` = '$store_id'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -230,7 +230,7 @@ if ($result->num_rows > 0) {
         </tr>
         <tr><td>Price</td><td>Service</td></tr>
 
-     <?php   $name=$row['name']; $sql1 =  "SELECT `amount`,`services`  FROM `tbl_sales_report` WHERE employee='$name' AND sales_date='$today_date' AND `services` != ''";
+     <?php   $name=$row['name']; $sql1 =  "SELECT `amount`,`services`  FROM `tbl_sales_report` WHERE `employee`='$name' AND `store_id`='$store_id' AND `sales_date`='$today_date'";
 $result1 = $conn->query($sql1);
 
 if ($result1->num_rows > 0) {
@@ -256,14 +256,14 @@ if ($result1->num_rows > 0) {
  <div style="width:3000px;"> 
 
 <?php 
-$sql =  "SELECT `name`  FROM `tbl_employee`";
+$sql =  "SELECT `name`  FROM `tbl_employee` WHERE `store_id` = '$store_id'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
 
 while($row = $result->fetch_assoc()) { 
 
-$name=$row['name'];$sql4 =  "SELECT SUM(`amount`) as totalamount  FROM `tbl_sales_report` WHERE employee='$name' AND sales_date='$today_date' AND `services` != ''"; 
+$name=$row['name'];$sql4 =  "SELECT SUM(`amount`) as totalamount  FROM `tbl_sales_report` WHERE `employee`='$name' AND `store_id` = '$store_id' AND `sales_date`='$today_date'"; 
 $result4 = $conn->query($sql4);
 if ($result4->num_rows > 0) {
 // output data of each row
