@@ -1,4 +1,3 @@
-
 <?php
 include("config.php");
 //$con = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
@@ -19,13 +18,13 @@ $duration =$_POST['duration'];
 //mysqli_free_result($result);
 
 if(!empty($id)){
-	$query="UPDATE `tbl_reminder` SET `reminder` = '$reminder',`duration` = '$duration' WHERE `id` = '$id'";
+	$query="UPDATE `tbl_reminder` SET `reminder` = '$reminder',`duration` = '$duration' WHERE `id` = '$id'  AND  `store_id`='$store_id'";
 	$stmt = $DB->prepare($query);
 	$stmt->execute();
 
 }else{
 	$query1="INSERT INTO `tbl_reminder` (`store_id`,`reminder`,`duration`) VALUES
-	('$store_id',$reminder','$duration')";
+	('$store_id','$reminder','$duration')";
 	$stmt = $DB->prepare($query1);
 	$stmt->execute();
 	}

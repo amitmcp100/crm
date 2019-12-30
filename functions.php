@@ -48,4 +48,9 @@ function authorize($module) {
     return $module == "yes" ? TRUE : FALSE;
 }
 
+
+function sms_fun($name){
+    return $name;      
+}
+
 ?>

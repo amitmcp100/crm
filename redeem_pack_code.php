@@ -10,6 +10,7 @@ if(isset($_POST['submit']))
 
 $userid    = $_POST['user'];
 $store_id  = $_SESSION['store_id'];
+
 $mobile    = $_POST['mobile'];
 $date=date("Y-m-d");
 $otp= str_pad(rand(0,999999), 6);
@@ -36,7 +37,7 @@ $used_sms=$row1['used_sms'];
 }
 
 
-$sql2 = "SELECT *  FROM `tbl_user_group` WHERE  'store_id' = '$store_id'";
+$sql2 = "SELECT *  FROM `tbl_user_group` WHERE  `store_id` = '$store_id' and `parent_id` ='0'";
 $stmt = $DB->prepare($sql2);
 $stmt->execute();
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -69,6 +70,10 @@ curl_setopt_array($curl, array(
 ));
 
 $response = curl_exec($curl);
+// echo "sss".$sender_id;echo "</br>";
+// echo $sender_id;echo "</br>";
+// echo $response;
+// exit;
 if($response=='sms sent successfully'){
 	$update_sms=$available_sms-1;
 	$u_sms=$used_sms+1;

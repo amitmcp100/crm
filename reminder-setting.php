@@ -7,6 +7,8 @@ if (!isset($_SESSION["user_id"]) || $_SESSION["user_id"] == "") {
 
 // set page title
 $title = "Dashboard";
+$store_id  =  $_SESSION["store_id"];
+$usid      =  $_SESSION["user_id"];
 
 include 'header.php';
 ?>
@@ -63,7 +65,7 @@ include('sidebar.php');
             <div class="content-body">
 
                 <?php
-                    $sql02 = "SELECT *  FROM `tbl_reminder`";
+                    $sql02 = "SELECT *  FROM `tbl_reminder` where `store_id` = '$store_id'";
 
                     $stmt = $DB->prepare($sql02);
                     $stmt->execute();
@@ -85,10 +87,7 @@ include('sidebar.php');
             <?php
             /*Attempt MySQL server connection. Assuming you are running MySQL
              server with default setting (user 'root' with no password) */
-            //include("configinc2.php");
-
-            $usid      =  $_SESSION["user_id"];
-            $store_id  =  $_SESSION["store_id"];
+            //include("configinc2.php");  
            
             ?>
                 <section id="horizontal-form-layouts">
