@@ -149,7 +149,7 @@ while ($row31 = $stmt->fetch()) {
                     }
                     foreach($employee_name as $emp)
                     {
-                    $sql41 = "SELECT SUM(amount) as totalamount,employee  FROM `tbl_sales_report` WHERE employee='$emp' AND sales_date='$today_date' AND  `store_id` = '$store_id'";
+                    $sql41 = "SELECT SUM(amount) as totalamount,employee  FROM `tbl_sales_report` WHERE `employee`='$emp' AND `sales_date`='$today_date' AND  `store_id` = '$store_id'";
                     
                     //echo $sql41;
                     $stmt = $DB->prepare($sql41);

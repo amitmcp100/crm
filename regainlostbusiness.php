@@ -106,9 +106,8 @@ include 'header.php';
                                                     $duration=$row11['duration'];
                                                     $fetch_time=$reminder." ".$duration;
                                                     }
-
-                                                                                                      
-                                                    $sql1 = "SELECT *  FROM `tbl_customer_data` WHERE `c_date` >=DATE_ADD(CURDATE(),INTERVAL -$fetch_time)  AND `store_id` = '$store_id'";
+                                                                                                   
+                                                    $sql1 = "SELECT *  FROM `tbl_customer_data` WHERE `c_date` >=DATE_ADD(CURDATE(),INTERVAL -$fetch_time)  AND `store_id` = '$store_id' ";
                                                     
                                                     //$sql1 ="SELECT CURDATE()"; 
                                                     //echo $sql1;
