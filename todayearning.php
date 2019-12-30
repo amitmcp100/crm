@@ -137,21 +137,25 @@ while ($row31 = $stmt->fetch()) {
                     <?php 
 
                     $sql37 = "SELECT `name`  FROM `tbl_employee` WHERE `store_id` = '$store_id'";
-                    //echo $sql31;
-                    $employee_name = [];
+                    //echo $sql37;die;
+                    $employee2 = [];
                     $stmt = $DB->prepare($sql37);
                     $stmt->execute();
                     $stmt->setFetchMode(PDO::FETCH_ASSOC);
                     $result = array();
                     while ($row37 = $stmt->fetch()) { 
-                        $employee_name= $row37['name'];
+                        $employee2 = $row37['name'];
 
                     }
-                    foreach($employee_name as $emp)
-                    {
-                    $sql41 = "SELECT SUM(amount) as totalamount,employee  FROM `tbl_sales_report` WHERE `employee`='$emp' AND `sales_date`='$today_date' AND  `store_id` = '$store_id'";
                     
-                    //echo $sql41;
+                    if (is_array($employee2) || is_object($employee2))
+                    {
+                 
+                    foreach($employee2 as $emp)
+                    {
+                    $sql41 = "SELECT SUM(amount) as `totalamount`,`employee`  FROM `tbl_sales_report` WHERE `employee`= '$emp' AND `sales_date`='$today_date' AND  `store_id` = '$store_id'";
+                    
+                    
                     $stmt = $DB->prepare($sql41);
                     $stmt->execute();
                     $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -193,6 +197,7 @@ while ($row31 = $stmt->fetch()) {
                      }
                  }
                 }
+            }
             ?>
            
                  
