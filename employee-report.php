@@ -166,7 +166,7 @@ include('sidebar.php');
                                                     <tr><td>Price</td><td>Service</td></tr>
 
                                                  <?php   $name=$row['name']; 
-                                        $sql1 =  "SELECT `amount`,`services`  FROM `tbl_sales_report` WHERE employee='$name' AND sales_date between '".$fromDate."' and '".$endDate."' AND  `store_id` = '$store_id'";
+                                            $sql1 =  "SELECT `amount`,`services`  FROM `tbl_sales_report` WHERE employee='$name' AND sales_date between '".$fromDate."' and '".$endDate."' AND  `store_id` = '$store_id'";
                                             $result1 = $conn->query($sql1);
 
                                             if ($result1->num_rows > 0) {
