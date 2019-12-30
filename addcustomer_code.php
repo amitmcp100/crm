@@ -172,74 +172,29 @@ if(!empty($name)){
 else{
 	$name='Customer';
 }
-
-
-// fetch tiny url..................!
-
-// $sql010 = "SELECT *  FROM `tbl_user_group` WHERE  `child_id` = '$userid'  and `store_id` = '$store_id'";
-// $stmt = $DB->prepare($sql010);
-// $stmt->execute();
-// $stmt->setFetchMode(PDO::FETCH_ASSOC);
-// while ($row010 = $stmt->fetch()) {
-// $tinyurl=$row010['tiny_url'];
-// echo $tinyurl;	
-// }
-
-$tinyurl  = "https://tinyurl.com/r4wqkfq?storeid=".$store_id;
-// fetch tiny url...................!
-
 $sql009 = "SELECT *  FROM `tbl_feedbacksetting` where `store_id` = '$store_id'";
-
-
 $stmt = $DB->prepare($sql009);
 $stmt->execute();
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
 while ($row009 = $stmt->fetch()) {
 $feedback_value=$row009['feedback_value'];
+}	
 
-}
-	
+///make sms templates here 
+$tinyurl  = "https://tinyurl.com/r4wqkfq?storeid=".$store_id;
 $sms_text=str_replace("customer_name",$name,$mess);
 $sms_text=str_replace("retailer_name",$business_name,$sms_text);
  
 if($feedback_value=='every'){
-	$sms_msg_text= $sms_text." Please Give feedback\n" .$tinyurl;
+	$sms_text= $sms_text." Please Give feedback\n" .$tinyurl;
 }
 else{
-	$sms_msg_text=$sms_text;
+	$sms_text=$sms_text;
 }
 
+// fetch tiny url...................!
 if(($available_sms>'1')&&($sendsms=='yes')){
-	$curl = curl_init();
-/*if(!empty($amount)){
-	$sms_text='Thank for shopping! with us';
-}
-else{
-	$sms_text='Thank for enquiry! with us';
-}*/
-  curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://msg160.com/sendsms/send1_post",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"userid\"\r\n\r\nyogesh\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"pass\"\r\n\r\n12345678\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"sender\"\r\n\r\n".$sender_id."\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"mobile\"\r\n\r\n".$mobile."\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"message\"\r\n\r\n".$sms_msg_text."\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"route\"\r\n\r\n5\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW--",
-  CURLOPT_HTTPHEADER => array(
-    "cache-control: no-cache",
-    "content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
-    "postman-token: 2e642de6-bd3c-1d3f-b5ce-3acd25867c5b"
-  ),
-));
-
-$response = curl_exec($curl);
-
-// echo "sss".$sender_id;echo "</br>";
-// echo $sender_id;echo "</br>";
-// echo $mobile;echo "</br>";
-// echo $response;
-// exit;
+include("sms_code.php");
 
 if($response=='sms sent successfully'){
 	$update_sms=$available_sms-1;

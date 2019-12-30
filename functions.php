@@ -49,8 +49,4 @@ function authorize($module) {
 }
 
 
-function sms_fun($name){
-    return $name;      
-}
-
 ?>
