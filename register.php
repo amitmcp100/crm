@@ -132,7 +132,7 @@ $title = "Register";
                                             </fieldset>
 
                                              <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="text" class="form-control" id="mobile" placeholder="Enter your Nobile No" name="mobile" required="">
+                                                <input type="text" class="form-control" id="mobile" placeholder="Enter your Mobile No" name="mobile" required="">
                                                 <div class="form-control-position">
                                                     <i class="ft-phone"></i>
                                                 </div>
