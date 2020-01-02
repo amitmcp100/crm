@@ -124,6 +124,17 @@ while ($row3 = $stmt->fetch()) {
 $available_sms=$row3['available_sms'];
 }
 
+$sql3 = "SELECT *  FROM `tbl_store` WHERE `store_id` = '$store_id'";
+//echo $sql;
+$stmt = $DB->prepare($sql3);
+$stmt->execute();
+$stmt->setFetchMode(PDO::FETCH_ASSOC);
+$result = array();
+while ($row3 = $stmt->fetch()) { 
+$store_created_date =$row3['create_date'];
+}
+
+$oneYearOn = date('Y-m-d',strtotime(date("Y-m-d", strtotime($store_created_date)) . " + 365 day"));
 
 ?>  
     <div class="app-content content">
@@ -199,7 +210,7 @@ $available_sms=$row3['available_sms'];
                                 <div class="card-body">
                                     <div class="media d-flex">
                                         <div class="media-body text-left">
-                                            <h3 class="danger">1st-Nov-2020</h3>
+                                            <h3 class="danger"><?=$oneYearOn ?></h3>
                                             <h6>SUBSCRIPTION EXPIRY</h6>
                                         </div>
                                         <div>
