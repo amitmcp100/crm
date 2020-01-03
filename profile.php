@@ -72,7 +72,7 @@ include 'header.php';
                 $stmt->setFetchMode(PDO::FETCH_ASSOC);
                 
                 while ($row = $stmt->fetch()) {  
-                $logo=$row['logo'];
+                //$logo=$row['logo'];
                 $username=$row['username'];
                 $first_name=$row['first_name'];
                 $last_name=$row['last_name'];
@@ -86,8 +86,7 @@ include 'header.php';
                 $contact=$row['contact'];
                 $bio=$row['bio'];
                  }
-                
-                //mysqli_free_result($result);
+
                
                 // Close connection
                 //mysqli_close($link);

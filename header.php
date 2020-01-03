@@ -22,7 +22,7 @@
                 $stmt->setFetchMode(PDO::FETCH_ASSOC);
                 while ($row = $stmt->fetch()) {  
                 
-                $logo=$row['logo'];
+                //$logo=$row['logo'];
                 $username=$row['username'];
                 $first_name=$row['first_name'];
                 $last_name=$row['last_name'];
@@ -36,7 +36,15 @@
                 $contact=$row['contact'];
                 $bio=$row['bio'];
                  }
-                
+
+                 $sqllogo = "SELECT *  FROM `tbl_store` WHERE  `store_id` ='$store_id'";
+                 $stmt = $DB->prepare($sqllogo);
+                 $stmt->execute();
+                 $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                //mysqli_free_result($result);
+                while ($rowlogo = $stmt->fetch()) {
+                    $logo = $rowlogo['logo'];  
+                }
                 //mysqli_free_result($result);
                 
                 // Close connection
